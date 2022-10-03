@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinica Northem | Inicio</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/northem_icon.ico">
+
+  <!--Tailwind css-->
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+
+  <!--Icons-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css'>
+
+</head>
+
+<body>
+  <div id="app">
+
+    <div class="loader"></div>
+
+    <header>
+
+      <!--Social-->
+      <section class="info-clinic">
+        <div class="container-contact">
+          <div class="location">
+            <i class="bi bi-geo-alt"></i>
+            <p>Zeballos 1232, Rosario Santa Fe</p>
+          </div>
+          <div class="mail" style="margin-left: 1.5vh; margin-right: 1.5vh;">
+            <i class="bi bi-envelope"></i>
+            <p>northem@contacto.com</p>
+          </div>
+          <div class="phone">
+            <i class="bi bi-telephone-forward"></i>
+            <p>+54 3412632166</p>
+          </div>
+        </div>
+        <div class="container-social">
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-twitter"></i>
+        </div>
+      </section>
+
+      <!--Navbar-->
+      <section id="header" class="">
+        <section class="wrapper transition-banner">
+          <img src="assets/img/logo.png" class="brand" width="165">
+          <div class="flex" style="align-items: center;">
+            <a href="/carrito.html" class="mx-5"><i class="bi bi-cart-check" style="font-size: 3vh;"
+                id="card-shop-mobile"></i></a>
+            <div class="burger" id="burger">
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+            </div>
+          </div>
+          <span class="overlay">
+          </span>
+          <nav class="navbar" id="navbar">
+            <ul class="menu" id="menu">
+              <img src="assets/img/logo.png" class="brand" width="200" style="margin-left: 10px;" id="img-nav-mobile">
+              <li class="menu-item"><a href="#" class="menu-link active">Inicio</a></li>
+
+              <li class="menu-item menu-dropdown">
+                <span class="menu-link " data-toggle="submenu">Especialistas<i class="bx bx-chevron-down"></i></span>
+                <ul class="submenu">
+                  <li class="submenu-item"><a href="servicios/clinica-medica.html" class="submenu-link">Clínica
+                      Médica</a>
+                  </li>
+                  <li class="submenu-item"><a href="servicios/oftalmología.html" class="submenu-link">Oftalmología</a>
+                  </li>
+                  <li class="submenu-item"><a href="servicios/cardiologia.html" class="submenu-link">Cardiología</a>
+                  </li>
+                  <li class="submenu-item"><a href="servicios/cirugías.html" class="submenu-link">Cirugía</a></li>
+                </ul>
+              </li>
+              <li class="menu-item"><a href="/obra-social.html" class="menu-link">Obra Social</a></li>
+              <li class="menu-item"><a href="/tienda.html" class="menu-link">Tienda</a></li>
+              <li class="menu-item"><a href="/contacto.html" class="menu-link">Contacto</a></li>
+
+              <li class="menu-item"><a href="/iniciar-sesion.html" class="menu-link" id="login-btn"
+                  v-show="clientTrue.length ==0">Iniciar Sesion</a>
+              </li>
+              <li class="menu-item"><a @click="logout()" class="menu-link" id="logout-btn"
+                  v-show="clientTrue.length !=0">Cerrar Sesion</a>
+              </li>
+              <li class="menu-item"><a @click="dasboard()" class="menu-link" id="logout-btn"
+                  v-show="clientTrue.length !=0">Dasboard</a>
+              </li>
+
+              <li class="menu-item"><a href="/carrito.html" class="menu-link" id="card-shop-pc"><i
+                    class="bi bi-cart-check" style="font-size: 3vh;"></i></a></li>
+            </ul>
+          </nav>
+        </section>
+      </section>
+
+      <!--Banner-->
+      <section id="img-banner">
+        <section class="banner">
+          <div class="overflow-hidden flex flex-nowrap  slider-banner" id="slider">
+            <div class=" text-white  flex-none w-full  slider-banner1">
+              <h1 class="title sub-banner1 h1-p" style="color: var(--main)"><span id="todo">TODO</span> PARA <br>TU
+                MASCOTA</h1>
+              <h1 class="title sub-banner1 h1-m" style="color: var(--main)"><span id="todo">TODO</span> PARA <br>TU
+                MASCOTA</h1>
+              <h3 class="sub-title p-banner">Contamos con la más amplia gama de servicios veterinarios, que incluye una
+                respuesta eficiente y veloz frente a cualquier urgencia.
+              </h3>
+              <br>
+              <a href="login.html" id="btn-banner">
+                Hazte Cliente
+              </a>
+            </div>
+            <div class=" text-white  flex-none w-full  slider-banner1 img-banner-2">
+              <h1 class="title sub-banner1 h1-p">MEDICOS <br><span id="todo">DE PRIMER NIVEL</span></h1>
+              <h1 class="title sub-banner1 h1-m">MEDICOS <span id="todo">DE <br>PRIMER NIVEL</span></h1>
+              <h3 class="sub-title p-banner">Equipos técnicos de altísimo nivel, un plantel de profesionales de gran
+                experiencia, y los equipos electrónicos y mecánicos más modernos del mercado.
+              </h3>
+              <br>
+              <a href="login.html" id="btn-banner">
+                Solicitar Turno
+              </a>
+            </div>
+          </div>
+
+        </section>
+      </section>
+
+
+    
+      <!--Contador-->
+      <section class="mx-auto container-counter">
+        <div class="counter-box">
+          <div class="number-box">
+            <div class="counter sub-title" style="font-size: 3rem;">
+              <h2>0</h2>
+            </div>
+          </div>
+          <br>
+          <div class="counter-text">
+            <h3 class="paragraph ">Pacientes Contentos</h3>
+          </div>
+        </div>
+        <div class="counter-box">
+          <div class="number-box sub-title" style="font-size: 3rem;">
+            <div class="people">0</div>
+          </div>
+          <br>
+          <div class="counter-text">
+            <h3 class="paragraph ">Cirugia exitosas</h3>
+          </div>
+        </div>
+        <div class="counter-box">
+          <div class="number-box sub-title" style="font-size: 3rem;">
+            <div class="years">0</div>
+          </div>
+          <br>
+          <div class="counter-text">
+            <h3 class="paragraph">Años de trayectoria</h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contador mobile -->
+      <section class="mx-auto container-counter-m">
+        <div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
+              loop: true,
+              slidesPerView: 1,
+              spaceBetween: 0,
+          
+              breakpoints: {
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 0,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 0,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 0,
+                },
+              },
+            })" class="relative w-10/12 mx-auto flex flex-row">
+          <div class="absolute inset-y-0 left-0 z-10 flex items-center">
+            <button @click="swiper.slidePrev()"
+              class="bg-white -ml-2 lg:-ml-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-6 h-6">
+                <path fill-rule="evenodd"
+                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="swiper-container" x-ref="container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide p-4">
+                <div class="flex flex-col rounded  overflow-hidden">
+                  <div class="flex-shrink-0">
+                    <div class="counter-box">
+                      <div class="number-box">
+                        <div class="counter sub-title" style="font-size: 3rem;">
+                          <h2>0</h2>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="counter-text">
+                        <h3 class="paragraph ">Pacientes Contentos</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide p-4">
+                <div class="flex flex-col rounded  overflow-hidden">
+                  <div class="flex-shrink-0">
+                    <div class="counter-box">
+                      <div class="number-box sub-title" style="font-size: 3rem;">
+                        <div class="people">0</div>
+                      </div>
+                      <br>
+                      <div class="counter-text">
+                        <h3 class="paragraph ">Cirugías exitosas</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide p-4">
+                <div class="flex flex-col rounded  overflow-hidden">
+                  <div class="flex-shrink-0">
+                    <div class="counter-box">
+                      <div class="number-box sub-title" style="font-size: 3rem;">
+                        <div class="years">0</div>
+                      </div>
+                      <br>
+                      <div class="counter-text">
+                        <h3 class="paragraph">Años de trayectoria</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-y-0 right-0 z-10 flex items-center">
+            <button @click="swiper.slideNext()"
+              class="bg-white -mr-2 lg:-mr-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-6 h-6">
+                <path fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </header>
+
+
+    <main>
+      <!--Sobre Nosotros-->
+      <section class="grid grid-cols-1 laptop:grid-cols-2 desktop:grid-cols-2 container mx-auto  container-about">
+        <div class="about-us-box1">
+        </div>
+        <div class="about-us-box2">
+          <h6 class="h6-about-us">AMAMOS NUESTRO TRABAJO!</h6>
+          <h2 class="title h2-about-us">Acerca de nosotros</h2>
+          <p class="paragraph p-about-us text-justify"> En la <b>Clínica Veterinaria Northem</b> nos dedicamos al
+            cuidado
+            de las
+            mascotas. Ofrecemos todo tipo de servicios especializados y de la mejor calidad, siempre pensando en la
+            salud,
+            bienestar y tranquilidad de nuestros usuarios. En nuestra tienda encontraras todo tipo de alimentos,
+            accesorios y medicamentos que te podrán facilitar la vida con tu mascota y a su vez mejorar su salud y
+            estado
+            de ánimo. </p>
+        </div>
+      </section>
+
+      <!--Servicios-->
+      <section class="container-services">
+        <div class="title-services">
+          <h3 class="title ">Nuestros Servicios</h3>
+          <p class="paragraph" style="margin-top:10px;">Contamos con distintos servicios médicos para que puedas darle
+            todas las atenciones a tu mascotas en un mismo lugar.</p>
+        </div>
+        <div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+    
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 0,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+          },
+        },
+      })" class="relative w-10/12 mx-auto flex flex-row">
+          <div class="absolute inset-y-0 left-0 z-10 flex items-center">
+            <button @click="swiper.slidePrev()"
+              class="bg-white -ml-2 lg:-ml-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-6 h-6">
+                <path fill-rule="evenodd"
+                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="swiper-container" x-ref="container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide p-4">
+                <div class="flex flex-col rounded  overflow-hidden">
+                  <div class="flex-shrink-0">
+                    <div class="box-services">
+                      <div class="icon-services">
+                        <img src="assets/img/service-iconos/Sin título-1.png" alt="servicesIcon" width="16">
+                      </div>
+                      <br>
+                      <div class="text-services">
+                        <h5 class="sub-title">Clínica Médica</h5>
+                        <a href="servicios/clinica-medica.html" class="paragraph">
+                          <p>Conoce más</p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide p-4">
+                <div class="flex flex-col rounded  overflow-hidden">
+                  <div class="flex-shrink-0">
+                    <div class="box-services">
+                      <div class="icon-services">
+                        <img src="assets/img/service-iconos/Sin título-2.png" alt="servicesIcon">
+                      </div>
+                      <br>
+                      <div class="text-services">
+                        <h5 class="sub-title">Oftalmología</h5>
+                        <a href="servicios/oftalmología.html" class="paragraph">
+                          <p>Conoce más</p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide p-4">
+                <div class="flex flex-col rounded  overflow-hidden">
+                  <div class="flex-shrink-0">
+                    <div class="box-services">
+                      <div class="icon-services">
+                        <img src="assets/img/service-iconos/Sin título-3.png" alt="servicesIcon">
+                      </div>
+                      <br>
+                      <div class="text-services">
+                        <h5 class="sub-title">Cardiología</h5>
+                        <a href="servicios/cardiologia.html" class="paragraph">
+                          <p>Conoce más</p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide p-4">
+                <div class="flex flex-col rounded  overflow-hidden">
+                  <div class="flex-shrink-0">
+                    <div class="box-services">
+                      <div class="icon-services">
+                        <img src="assets/img/service-iconos/Sin título-4.png" alt="servicesIcon">
+                      </div>
+                      <br>
+                      <div class="text-services">
+                        <h5 class="sub-title">Cirugía</h5>
+                        <a href="servicios/cirugías.html" class="paragraph">
+                          <p>Conoce más</p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-y-0 right-0 z-10 flex items-center">
+            <button @click="swiper.slideNext()"
+              class="bg-white -mr-2 lg:-mr-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-6 h-6">
+                <path fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!--Obra social-->
+      <section class="container-social-work pc-responsive-social">
+        <div class="container-social-work-into">
+          <div class="box-social-work">
+            <h2 class="title title-social">Obra social Plan 200</h2>
+            <br>
+            <span class="paragraph">Solamente</span>
+            <h5 class="sub-title">$600</h5>
+            <br>
+            <div class="list-social-work">
+
+              <div class="list-chek">
+                <i class="bi bi-check-circle-fill"></i>
+                <span class="paragraph"> Veterinario en Línea las 24 h</span>
+              </div>
+              <div class="list-chek">
+                <i class="bi bi-check-circle-fill"></i>
+                <span class="paragraph"> Cuidado de tu mascota (controles, vacunas, traslados, pipetas y
+                  desparasitaciones).</span>
+              </div>
+              <div class="list-chek">
+                <i class="bi bi-x-circle-fill" style="color: red;"></i>
+                <span class="paragraph"> Descuento del 15% en compra de alimentos y juguetes</span>
+              </div>
+
+              <div class="list-chek">
+                <i class="bi bi-x-circle-fill" style="color: red;"></i>
+                <span class="paragraph"> Castraciones de tu mascota (simples, operaciones para esterilización).</span>
+              </div>
+              <br>
+              <div class="button-social-work">
+                <a href="obra-social.html" id="btn-social-work">Obtener más información</a>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="box-social-work">
+            <h2 class="title title-social">Obra social Plan 500</h2>
+            <br>
+            <span class="paragraph">Solamente</span>
+            <h5 class="sub-title">$1.200</h5>
+            <br>
+            <div class="list-social-work">
+
+              <div class="list-chek">
+                <i class="bi bi-check-circle-fill"></i>
+                <span class="paragraph"> Veterinario en Línea las 24 h</span>
+              </div>
+              <div class="list-chek">
+                <i class="bi bi-check-circle-fill"></i>
+                <span class="paragraph"> Cuidado de tu mascota (controles, vacunas, traslados, pipetas y
+                  desparasitaciones).</span>
+              </div>
+              <div class="list-chek">
+                <i class="bi bi-check-circle-fill"></i>
+                <span class="paragraph"> Descuento del 15% en compra de alimentos y juguetes</span>
+              </div>
+
+              <div class="list-chek">
+                <i class="bi bi-x-circle-fill" style="color: red;"></i>
+                <span class="paragraph"> Castraciones de tu mascota (simples, operaciones para esterilización).</span>
+              </div>
+              <br>
+              <div class="button-social-work">
+                <a href="obra-social.html" id="btn-social-work">Obtener más información</a>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="box-social-work">
+            <h2 class="title title-social">Obra social Plan 800</h2>
+            <br>
+            <span class="paragraph">Solamente</span>
+            <h5 class="sub-title">$1.800</h5>
+            <br>
+            <div class="list-social-work">
+
+              <div class="list-chek">
+                <i class="bi bi-check-circle-fill"></i>
+                <span class="paragraph"> Veterinario en Línea las 24 h</span>
+              </div>
+              <div class="list-chek">
+                <i class="bi bi-check-circle-fill"></i>
+                <span class="paragraph"> Cuidado de tu mascota (controles, vacunas, traslados, pipetas y
+                  desparasitaciones).</span>
+              </div>
+              <div class="list-chek">
+                <i class="bi bi-check-circle-fill"></i>
+                <span class="paragraph"> Descuento del 15% en compra de alimentos y juguetes</span>
+              </div>
+
+              <div class="list-chek">
+                <i class="bi bi-check-circle-fill"></i>
+                <span class="paragraph"> Castraciones de tu mascota (simples, operaciones para esterilización).</span>
+              </div>
+              <br>
+              <div class="button-social-work">
+                <a href="obra-social.html" id="btn-social-work">Obtener más información</a>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Obra social mobile -->
+      <section class="container-social-work mobile-responsive-social">
+        <div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+    },
+  })" class="relative w-10/12 mx-auto flex flex-row">
+          <div class="absolute inset-y-0 left-0 z-10 flex items-center">
+            <button @click="swiper.slidePrev()"
+              class="bg-white -ml-2 lg:-ml-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-6 h-6">
+                <path fill-rule="evenodd"
+                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="swiper-container" x-ref="container">
+            <div class="swiper-wrapper" v-for="product in products">
+              <div class="swiper-slide p-4">
+                <div class="flex flex-col rounded  overflow-hidden">
+                  <div class="flex-shrink-0">
+                    <!--Contenido-->
+                    <div class="box-social-work">
+                      <h2 class="title title-social">Obra social Plan 200</h2>
+                      <br>
+                      <span class="paragraph">Solamente</span>
+                      <h5 class="sub-title">$600</h5>
+                      <span class="paragraph">por mes*</span>
+                      <br>
+                      <div class="list-social-work text-justify">
+                        <div class="list-chek">
+                          <i class="bi bi-check-lg"></i>
+                          <span class="paragraph">Cuidado de tu mascota</span>
+                        </div>
+                        <div class="list-chek">
+                          <i class="bi bi-check-lg"></i>
+                          <span class="paragraph">Castraciones de tu mascota</span>
+                        </div>
+                        <div class="list-chek">
+                          <i class="bi bi-check-lg"></i>
+                          <span class="paragraph"> Bienestar de tu mascota</span>
+                        </div>
+                        <br>
+                        <div class="button-social-work">
+                          <a href="obra-social.html">Obterner más información</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide p-4">
+                <div class="flex flex-col rounded  overflow-hidden">
+                  <div class="flex-shrink-0">
+                    <div class="box-social-work">
+                      <h2 class="title title-social">Obra social Plan 400</h2>
+                      <br>
+                      <span class="paragraph">Solamente</span>
+                      <h5 class="sub-title">$1.200</h5>
+                      <span class="paragraph">por mes*</span>
+                      <br>
+                      <div class="list-social-work text-justify">
+                        <div class="list-chek">
+                          <i class="bi bi-check-lg"></i>
+                          <span class="paragraph">Cuidado de tu mascota</span>
+                        </div>
+                        <div class="list-chek">
+                          <i class="bi bi-check-lg"></i>
+                          <span class="paragraph">Castraciones de tu mascota</span>
+                        </div>
+                        <div class="list-chek">
+                          <i class="bi bi-check-lg"></i>
+                          <span class="paragraph"> Bienestar de tu mascota</span>
+                        </div>
+                        <br>
+                        <div class="button-social-work">
+                          <a href="obra-social.html">Obterner mas información</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide p-4">
+                <div class="flex flex-col rounded  overflow-hidden">
+                  <div class="flex-shrink-0">
+                    <div class="box-social-work">
+                      <h2 class="title title-social">Obra social Plan 600</h2>
+                      <br>
+                      <span class="paragraph">Solamente</span>
+                      <h5 class="sub-title">$1.800</h5>
+                      <span class="paragraph">por mes*</span>
+                      <br>
+                      <div class="list-social-work text-justify">
+                        <div class="list-chek">
+                          <i class="bi bi-check-lg"></i>
+                          <span class="paragraph">Cuidado de tu mascota</span>
+                        </div>
+                        <div class="list-chek">
+                          <i class="bi bi-check-lg"></i>
+                          <span class="paragraph">Castraciones de tu mascota</span>
+                        </div>
+                        <div class="list-chek">
+                          <i class="bi bi-check-lg"></i>
+                          <span class="paragraph"> Bienestar de tu mascota</span>
+                        </div>
+                        <br>
+                        <div class="button-social-work">
+                          <a href="obra-social.html">Obterner más información</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-y-0 right-0 z-10 flex items-center">
+            <button @click="swiper.slideNext()"
+              class="bg-white -mr-2 lg:-mr-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-6 h-6">
+                <path fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!--Carrusel Productos-->
+      <section class="container-shop-index  ">
+        <div class="shop-title">
+          <h2 class="title">Encontrá el producto ideal</h2>
+          <p class="paragraph">Tenemos los mejores productos para tu mascota. Envíos gratis a domicilio. Comprá online o
+            en cualquiera de nuestras 35 sucursales.</p>
+        </div>
+
+        <div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 0,
+  
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 0,
+        },
+      },
+    })" class="relative w-10/12 mx-auto flex flex-row">
+          <div class="absolute inset-y-0 left-0 z-10 flex items-center">
+            <button @click="swiper.slidePrev()"
+              class="bg-white -ml-2 lg:-ml-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-6 h-6">
+                <path fill-rule="evenodd"
+                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="swiper-container" x-ref="container" v-for="product in products.slice(0,3)">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide p-4">
+                <div class="flex flex-col rounded  overflow-hidden">
+                  <div class="flex-shrink-0">
+                    <div class="card-shop">
+
+                      <!--Imagen de producto-->
+                      <div class="card-shop-img">
+                        <img src="assets/img/productos/producto.webp" width="160">
+                      </div>
+
+                      <!--Descripcion producto-->
+                      <div class="card-shop-title">
+                        <h4 class="sub-title">{{product.name}}</h4>
+                      </div>
+
+                      <!--Precio producto-->
+                      <div class="card-shop-price">
+                        <h5 class="sub-title">${{product.price}}</h5>
+                        <p class="paragraph">Hasta 4 cuotas sin interes de $2.200 con Bancos seleccionados</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-y-0 right-0 z-10 flex items-center">
+            <button @click="swiper.slideNext()"
+              class="bg-white -mr-2 lg:-mr-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-6 h-6">
+                <path fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+        <div class="btn-shop">
+          <a href="./tienda.html" id="btn-shop">Ver más productos</a>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!--Carrusel Marcas-->
+    <section class="container-marks container mx-auto">
+      <div id="logos-home-page">
+        <div class="slider">
+          <div class="slide-track">
+            <div class="slide"><img class="alignnone size-medium wp-image-13023"
+                src="assets/img/marcas/Petco-Logo-2021.webp" alt="" width="900" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13022" src="assets/img/marcas/purina.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13021" src="assets/img/marcas/royal.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-full wp-image-13020" src="assets/img/marcas/sabrositos.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13019" src="assets/img/marcas/Whiskas.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13023"
+                src="assets/img/marcas/Petco-Logo-2021.webp" alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13022" src="assets/img/marcas/purina.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13021" src="assets/img/marcas/royal.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-full wp-image-13020" src="assets/img/marcas/sabrositos.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13019" src="assets/img/marcas/Whiskas.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13023"
+                src="assets/img/marcas/Petco-Logo-2021.webp" alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13022" src="assets/img/marcas/purina.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13021" src="assets/img/marcas/royal.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-full wp-image-13020" src="assets/img/marcas/sabrositos.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13019" src="assets/img/marcas/Whiskas.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13023"
+                src="assets/img/marcas/Petco-Logo-2021.webp" alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13022" src="assets/img/marcas/purina.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13021" src="assets/img/marcas/royal.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-full wp-image-13020" src="assets/img/marcas/sabrositos.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13019" src="assets/img/marcas/Whiskas.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13023"
+                src="assets/img/marcas/Petco-Logo-2021.webp" alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13022" src="assets/img/marcas/purina.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13021" src="assets/img/marcas/royal.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-full wp-image-13020" src="assets/img/marcas/sabrositos.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-full wp-image-13020" src="assets/img/marcas/sabrositos.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13019" src="assets/img/marcas/Whiskas.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13023"
+                src="assets/img/marcas/Petco-Logo-2021.webp" alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13022" src="assets/img/marcas/purina.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13021" src="assets/img/marcas/royal.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-full wp-image-13020" src="assets/img/marcas/sabrositos.png"
+                alt="" width="500" /></div>
+            <div class="slide"><img class="alignnone size-medium wp-image-13019" src="assets/img/marcas/Whiskas.png"
+                alt="" width="500" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Footer -->
+  <div class="container-footer-img">
+  </div>
+  <footer>
+    <div class="container mx-auto container-footer">
+      <div class="div-footer">
+        <ul class="list-footer">
+          <h6 class="h6-footer sub-title">NUESTRA EMPRESA</h6>
+          <br>
+          <a href="" class="paragraph">Quiénes somos?</a>
+          <a href="" class="paragraph">Visión</a>
+          <a href="" class="paragraph">Misión</a>
+          <a href=""></a>
+          <a href=""></a>
+        </ul>
+      </div>
+      <div class="div-footer">
+        <ul class="list-footer">
+          <h6 class="h6-footer sub-title">PRODUCTOS</h6>
+          <br>
+          <a href="/tienda.html" class="paragraph">Farmacia</a>
+          <a href="/tienda.html" class="paragraph">Alimento</a>
+          <a href="/tienda.html" class="paragraph">Juguetes</a>
+        </ul>
+      </div>
+      <div class="div-footer">
+        <ul class="list-footer">
+          <h6 class="h6-footer sub-title">SERVICIOS</h6>
+          <br>
+          <a href="/servicios/clinica-medica.html" class="paragraph">Clínica Médica</a>
+          <a href="/servicios/cirugías.html" class="paragraph">Cirugía</a>
+          <a href="/servicios/cardiologia.html" class="paragraph">Cardiología</a>
+          <a href="/servicios/oftalmología.html" class="paragraph">Oftalmología</a>
+        </ul>
+      </div>
+      <div class="div-footer">
+        <ul>
+          <h6 class="h6-footer sub-title">SUSCRIBETE</h6>
+
+          <input type="text" placeholder="Ingresa tu email">
+          <div>
+            <br>
+            <a href="" id="sub-footer">Suscribirse</a>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--JavaScript-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script type="text/javascript">$(window).load(function () { $(".loader").fadeOut("slow"); });</script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
+  <script src='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="close-login.js"></script>
+  <script src="assets/js/contador.js"></script>
+  <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>

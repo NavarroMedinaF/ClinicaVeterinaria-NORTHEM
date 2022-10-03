@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Northem | Carrito de compras</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/northem_icon.ico">
+
+    <!--Tailwind css-->
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css'>
+    
+
+</head>
+
+<body>
+
+    <div class="loader"></div>
+
+    <header>
+
+        <!--Social-->
+        <section class="info-clinic">
+            <div class="container-contact">
+                <div class="location">
+                    <i class="bi bi-geo-alt"></i>
+                    <p>Zeballos 1232, Rosario Santa Fe</p>
+                </div>
+    
+                <div class="mail" style="margin-left: 1.5vh; margin-right: 1.5vh;">
+                    <i class="bi bi-envelope"></i>
+                    <p>northem@contacto.com</p>
+                </div>
+    
+                <div class="phone">
+                    <i class="bi bi-telephone-forward"></i>
+                    <p>+54 3412632166</p>
+                </div>
+    
+            </div>
+            <div class="container-social">
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+        </section>
+    
+        <!--Navbar-->
+        <section id="header" class="">
+        <section class="wrapper transition-banner">
+            
+            <a href="/index.html"><img src="../assets/img/logo.png" class="brand" width="165"></a>
+            
+            <div class="flex" style="align-items: center;">
+          <a href="/carrito.html" class="mx-5"><i class="bi bi-cart-check" style="font-size: 3vh;"
+              id="card-shop-mobile"></i></a>
+          <div class="burger" id="burger">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </div>
+        </div>
+           
+           <span class="overlay">
+            
+           </span>
+           
+           <nav class="navbar" id="navbar">
+            
+              <ul class="menu" id="menu">
+                <img src="../assets/img/logo.png" class="brand" width="200" style="margin-left: 10px;" id="img-nav-mobile">
+                 <li class="menu-item"><a href="index.html" class="menu-link">Inicio</a></li>
+                 
+                 <li class="menu-item menu-dropdown">
+                    <span class="menu-link" data-toggle="submenu">Especialistas<i class="bx bx-chevron-down"></i></span>
+                    <ul class="submenu">
+                       <li class="submenu-item"><a href="servicios/clinica-medica.html" class="submenu-link">Clínica Médica</a></li>
+                       <li class="submenu-item"><a href="servicios/oftalmología.html" class="submenu-link">Oftalmología</a></li>
+                       <li class="submenu-item"><a href="servicios/cardiologia.html" class="submenu-link">Cardiologia</a></li>
+                       <li class="submenu-item"><a href="servicios/cirugías.html" class="submenu-link">Cirugía</a></li>
+                    </ul>
+                 </li>
+                 <li class="menu-item"><a href="obra-social.html" class="menu-link">Obra Social</a></li>
+                 <li class="menu-item"><a href="tienda.html" class="menu-link">Tienda</a></li>
+                 <li class="menu-item"><a href="contacto.html" class="menu-link">Contacto</a></li>
+    
+                 <li class="menu-item"><a href="iniciar-sesion.html" class="menu-link" id="login-btn">Iniciar Sesion</a></li>
+                 <li class="menu-item active"><a href="#" class="menu-link" id="card-shop-pc"><i class="bi bi-cart-check" style="font-size: 3vh;"></i></a></li>
+              </ul>
+           </nav>
+        </section>
+        </section>
+    
+          <!--Banner-->
+        <section id="img-banner">
+            <section class="banner" >
+             
+    
+            </section>
+        </section>
+        <span class="overlay">
+              
+        </span>
+             
+    
+    </header>
+    <div id="app">
+    <button type="button" id="print">Imprimir tarjeta</button>
+
+    <div id="popup-modal" tabindex="-1"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full"
+        aria-hidden="true">
+        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+            <div id="container-print">
+                <div class="mx-auto p-16" style="max-width: 800px;">
+                    <div class="flex items-center justify-between mb-2 px-3">
+                        <div class="text-right">
+                            <img src="./assets/img/logo.png" alt="logo" class="logo_pdf">
+                        </div>
+                    </div>
+                    <div class="border border-t-2 border-gray-200 mb-2 px-3"></div>
+                    <div class="flex justify-between mb-2 px-3">
+                        <div>
+                            Clínica Northem<br />
+                            Zeballos 1232, Rosario<br />
+                            Santa Fe, Argentina<br />
+                            northem@contacto.com<br />
+                            +54 3412632166
+                        </div>
+                        <div class="text-right">
+                            {{clients.name + " " + clients.lastName}}<br />
+                           {{clients.address}}<br />
+                            {{clients.city + " " + clients.state}}<br />
+                            {{clients.email}}
+                        </div>
+                    </div>
+
+                    <div class="border border-t-2 border-gray-200 mb-2 px-3"></div>
+                    <div class="logo_texto_pdf">
+                        <div class="flex justify-between barraMenu px-3">
+                            <p class="paragraph">Producto</p>
+                            <div class="flex">
+                            <p class="paragraph px-5">Precio U.</p>
+                            <p class="paragraph px-5">Cantidad</p>
+                            <p class="paragraph">Total</p>
+                            </div>
+                        </div>
+                        <div v-for="producto in arrayCarritoDeCompras">
+                            <div class="flex justify-between px-3">
+                                <p class="paragraph productoName">{{producto.name}}</p>
+                                <div class="flex">
+                                    <p class="paragraph px-5">{{dinero(producto.price)}}</p>
+                                    <p class="paragraph px-5">{{producto.quantity}}</p>
+                                    <p class="paragraph">{{dinero(producto.price * producto.quantity)}}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="flex justify-between items-center mb-2 px-3">
+                            <div class="text-2xl font-medium"><span class="paragraph">Total Factura:</span></div>
+                            <div class="text-2xl text-right font-medium">
+                                <p>{{sumaTotalCompra}}{{dinero(precioTotalCompra)}} ARS</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-8 justify-end px-3">
+                            <div class="text-right w-1/2 px-0 leading-tight">
+                                <small class="text-xs">
+                                    ¡Gracias por confiar en Clínica Veterianaria Northem!
+                                    Estamos muy contentos de atender las necesidades de tus mascotas.
+                                    Trabajamos para que siempre obtengas la máxima satisfacción.
+                                    No nos cabe duda de que volveremos a verte de nuevo muy pronto.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="img_footer_pdf">
+                            <div class="mb-20 text-4xl text-center px-3">
+                                <span>Gracias por confiar en nosotros!</span>
+                            </div>
+                            <div class="text-center text-sm px-3">
+                                northem@contacto.com ∖ +54 3412632166
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="arreglo">
+    <section class="container-chekout container mx-auto" v-if="arrayCarritoDeCompras != ''">
+
+        <!--PRODCUTOS-->
+        <div class="container-total-products" >
+            <table class="table-auto container-table-productos">
+                <thead>
+                    <tr>
+                        <th class="paragraph">Productos</th>
+                        <th class="paragraph">Cantidad</th>
+                        <th class="paragraph">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                    <tr v-for="producto in arrayCarritoDeCompras">
+                        <td class="img-carrito">
+                            <img :src="producto.image" alt="productos" >
+                            <div class="text-product">
+                                <h6><b>{{producto.name}}</b></h6>
+                                <h6>{{dinero(producto.price)}}</h6>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn-counter" @click="quitarUnidadProducto(producto)">-</button>
+                                <button type="button" class="" disabled ><b>{{producto.quantity}}</b></button>
+                                <button type="button" class="btn-counter"  @click="agregarAlCarrito(producto)">+</button>
+                            </div>
+                            <div>
+                                <button @click="quitarDelCarrito(producto)" style="color: red;font-family: var(--font-title);font-size: 0.8rem;">Eliminar</button>
+                            </div>
+                        </td>
+                        <td style="font-family: var(--font-title);font-size: 1rem;">{{dinero(producto.price * producto.quantity)}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!--PAGO-->
+        <div class="container-pagos">
+            <div class="container-payments">
+            
+                <div class="total-precio">
+                <p class="paragraph paragraph-pagos">Total</p>
+                <p class="paragraph paragraph-pagos">{{sumaTotalCompra}}{{dinero(precioTotalCompra)}}</p>
+            </div>
+
+            <div>
+                <div class="card container payment">
+                    <br>
+                     <div class="relative z-0 mb-6 w-full group">
+                            <input type="text" name="floating_direccion" id="floating_direccion" v-model="cardNumber"
+                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                placeholder=" " required>
+                            <label for="floating_direccion"
+                                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Numero de tarjeta</label>
+                    </div>
+
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="text" name="floating_direccion" id="floating_direccion"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required>
+                        <label for="floating_direccion"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre de tarjeta</label>
+                    </div>
+
+                    <div class="grid grid-cols-2">
+                        <div class="relative z-0 mb-6 w-full group">
+                            <input type="text" name="repeat_password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required>
+                            <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Vencimiento</label>
+                        </div>
+                        <div class="relative z-0 mb-6 w-full group">
+                            <input type="number" name="repeat_password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" >
+                            <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">CVV</label>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="button-pagos">
+                            <button type="button" @click="comprar">Pagar</button>
+                        </div>
+                        <div class="button-pagos">
+                            <button type="button" @click="comprarCancelar()">Cancelar</button>
+                        </div>
+            <div>
+                
+
+            </div>
+            </div>
+        </div>
+       
+
+
+    </section>
+
+    <div v-else class="carrito-vacio">
+    <h1 class="sub-title">El carrito esta vacio</h1>
+    <p class="paragraph">Corre a nuestra tienda!!</p>
+    <p class="paragraph">Tenemos gran variedad de productos</p></div>
+
+    </main>
+    </div>
+
+
+<div class="footer-card">
+
+    <div class="container-footer-img" >
+    </div>
+    <footer >
+    <div class="container mx-auto container-footer">
+      <div class="div-footer">
+          <ul class="list-footer">
+              <h6 class="h6-footer sub-title">NUESTRA EMPRESA</h6>
+              <a href="" class="paragraph">Quienes somos?</a>
+              <a href="" class="paragraph">Visión</a>
+              <a href="" class="paragraph">Misión</a>
+              <a href=""></a>
+              <a href=""></a>
+          </ul>
+      </div>
+
+    
+      <div class="div-footer">
+        <ul class="list-footer">
+            <h6 class="h6-footer sub-title">PRODUCTOS</h6>
+            <br>
+            <a href="/tienda.html" class="paragraph">Farmacia</a>
+            <a href="/tienda.html" class="paragraph">Alimento</a>
+            <a href="/tienda.html" class="paragraph">Juguetes</a>
+        </ul>
+    </div>
+
+    <div class="div-footer">
+      <ul class="list-footer">
+        <h6 class="h6-footer sub-title">SERVICIOS</h6>
+        <br>
+        <a href="/servicios/clinica-medica.html" class="paragraph">Clínica Médica</a>
+        <a href="/servicios/cirugías.html" class="paragraph">Cirugía</a>
+        <a href="/servicios/cardiologia.html" class="paragraph">Cardiología</a>
+        <a href="/servicios/oftalmología.html" class="paragraph">Oftalmología</a>
+    </ul>
+  </div>
+      <div class="div-footer">
+          <ul>
+              <h6 class="h6-footer sub-title">SUSCRIBETE</h6>
+              
+              <input type="text" placeholder="Ingresa tu email">
+              <div>
+                <br>
+              <a href="" id="sub-footer">Suscribirse</a>
+              </div>
+          </ul>
+      </div>
+    </div>
+    </footer>
+
+</div>
+
+
+    <!--JavaScript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">$(window).load(function() {$(".loader").fadeOut("slow");});</script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
+    <script src='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script> 
+    <script src="./carrito.js"></script>
+    <script src="assets/js/scripts.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</body>
+
+</html>

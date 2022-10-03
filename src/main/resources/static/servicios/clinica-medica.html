@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Clínica Médica</title>
+    <link rel="icon" type="image/x-icon" href="/assets/img/northem_icon.ico">
+    <!--Tailwind css-->
+    <link rel="stylesheet" href="../assets/css/tailwind.css">
+    
+    <!--Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"/>
+</head>
+<body>
+<div id="app">
+    <div class="loader"></div>
+
+    <header>
+
+        <!--Social-->
+        <section class="info-clinic">
+            <div class="container-contact">
+                <div class="location">
+                    <i class="bi bi-geo-alt"></i>
+                    <p>Zeballos 1232, Rosario Santa Fe</p>
+                </div>
+
+                <div class="mail" style="margin-left: 1.5vh; margin-right: 1.5vh;">
+                    <i class="bi bi-envelope"></i>
+                    <p>northem@contacto.com</p>
+                </div>
+
+                <div class="phone">
+                    <i class="bi bi-telephone-forward"></i>
+                    <p>+54 3412632166</p>
+                </div>
+
+            </div>
+            <div class="container-social">
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+        </section>
+
+        <!--Navbar-->
+        <section id="header" class="">
+        <section class="wrapper transition-banner">
+            
+            <a href="/index.html"><img src="../assets/img/logo.png" class="brand" width="165"></a>
+            <div class="flex" style="align-items: center;" >
+          <a href="/carrito.html" class="mx-5"><i class="bi bi-cart-check" style="font-size: 3vh;"
+              id="card-shop-mobile"></i></a>
+          <div class="burger" id="burger">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </div>
+        </div>
+           
+           <span class="overlay">
+            
+           </span>
+           
+           <nav class="navbar" id="navbar">
+            
+              <ul class="menu" id="menu">
+                <img src="../assets/img/logo.png" class="brand" width="200" style="margin-left: 10px;" id="img-nav-mobile">
+                 <li class="menu-item"><a href="../index.html" class="menu-link">Inicio</a></li>
+                 
+                 <li class="menu-item menu-dropdown">
+                    <span class="menu-link active" data-toggle="submenu">Especialistas<i class="bx bx-chevron-down"></i></span>
+                    <ul class="submenu">
+                       <li class="submenu-item"><a href="#" class="submenu-link">Clínica Médica</a></li>
+                       <li class="submenu-item"><a href="oftalmología.html" class="submenu-link">Oftalmología</a></li>
+                       <li class="submenu-item"><a href="cardiologia.html" class="submenu-link">Cardiologia</a></li>
+                       <li class="submenu-item"><a href="cirugías.html" class="submenu-link">Cirugía</a></li>
+                    </ul>
+                 </li>
+                 <li class="menu-item"><a href="../obra-social.html" class="menu-link">Obra Social</a></li>
+                 <li class="menu-item"><a href="../tienda.html" class="menu-link">Tienda</a></li>
+                 <li class="menu-item"><a href="../contacto.html" class="menu-link">Contacto</a></li>
+
+                  <li class="menu-item"><a href="/iniciar-sesion.html" class="menu-link" id="login-btn" v-show="clientTrue.length ==0">Iniciar Sesion</a>
+                  </li>
+
+                 <li class="menu-item"><a href="#" class="menu-link" id="card-shop-pc"><i class="bi bi-cart-check" style="font-size: 3vh;"></i></a></li>
+              </ul>
+           </nav>
+        </section>
+        </section>
+
+          <!--Banner-->
+        <section id="img-banner">
+            <section class="banner" >
+             
+    
+            </section>
+        </section>
+        <span class="overlay">
+              
+        </span>
+             
+    
+    </header>
+
+<main>
+
+    <section class="container-total-service container mx-auto">
+
+    <div class="container-title-service-and-img">
+        <div class="title-inf-services">
+           
+            <h2 class="title">Clínica Médica</h2>
+            <br>
+            <p class="paragraph text-justify">Se brinda asistencia de manera ambulatoria, o que requieren internación por enfermedades agudas y crónicas, y realiza el seguimiento de aquellos enfermos, quirúrgicos y no quirúrgicos.</p>
+            <br>
+        </div>
+
+        <div class="container-img">
+        <div class="container-img-service">
+            <div class="img-info-services-box1" id="img1">
+                <img src="../assets/img/servicios/clinicoMedico1.jpg" width="305">
+            </div>
+            <div class="img-info-services-box2" id="img2">
+                <img src="../assets/img/servicios/clinicoMedico2.jpg"  width="310">
+            </div>
+        </div>
+
+        <div class="container-img-service">
+            <div class="img-info-services-box3" id="img3">
+                <img src="../assets/img/servicios/clinicoMedico3.webp"  width="270">
+            </div>
+
+            <div class="img-info-services-box4" id="img4">
+                <img src="../assets/img/servicios/clinicoMedico4.webp"  width="270">
+            </div>
+        </div>
+        
+        </div>
+    </div>
+
+    <div class="container-list-service">
+
+        <div class="title-ul-service">
+     
+            <h2 class="title">Detalles</h2>
+        </div>
+
+        <div class="services-list">
+
+            <div class="details-list">
+                <i class="bi bi-arrow-right"></i>
+                <p class="paragraph text-justify">La exploración física o examen clínico es el conjunto de maniobras que realiza un médico o enfermero para obtener información sobre el estado de salud de una persona. La ciencia encargada de su estudio se denomina Semiología clínica.</p>
+               </div>
+               <br>
+               <div class="details-list">
+                <i class="bi bi-arrow-right"></i>
+                <p class="paragraph text-justify">Sí el profesional lo considera conveniente, derivara al paciente con un especialista.</p>
+               </div>
+               <br>
+               <div class="details-list">
+                <i class="bi bi-arrow-right"></i>
+                <p class="paragraph text-justify">El profesional dara seguimiento al historial clínico del paciente, de esta manera puede controlar enfermedades, vacunas y cirugías que el paciente haya tenido.</p>
+            </div>
+            
+
+            <br>
+            <div class="button-details">
+             <a href="../iniciar-sesion.html" id="service-btn">Solicitar turno</a>
+            </div>
+
+            
+                 
+         </div>
+    </div>
+
+    </section>
+    
+    <br>
+
+    <section class="container-professional container mx-auto">
+
+        <div class="div-h2-specialist">
+            <h2 class="title">Nuestros Especialistas</h2>
+            <p class="paragraph">Cada animal es un mundo, por eso contamos con especialistas en Clínica Médica para que puedas darle todas las atenciones a tu mascotas en el mismo lugar</p>
+        </div>
+
+        <section class="container-specialist-responsive container mx-auto">
+        
+        <div class="box-specialist">
+            <div class="box-professional">
+
+                <div class="div-img-specialist1" style="background-image: url(../assets/img/veterinarios/medico1.jpg)">
+                </div>
+
+                <div class="div-info-specialist">
+                    <div class="name-specialist">
+                        <h3 class="sub-title">Jeremías Barrios</h3>
+                        <p  class="paragraph">Médico clínico</p>
+                    </div>
+                    <br>
+                    <div class="text-specialist">
+                        <p class="paragraph text-justify">Egresado de la Facultad de Ciencias Veterinarias (UBA) y docente del área en grado y posgrado. Jefe del Servicio clínico del hospital escuela de la FCV-UBA.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="box-specialist">
+            <div class="box-professional">
+
+                <div class="div-img-specialist1" style="background-image: url(../assets/img/veterinarios/medica1.jpg)">
+                </div>
+
+                <div class="div-info-specialist">
+                    <div class="name-specialist">
+                        <h3 class="sub-title">Micaela Ferreyra</h3>
+                        <p  class="paragraph">Médico clínico</p>
+                    </div>
+                    <br>
+                    <div class="text-specialist">
+                        <p class="paragraph text-justify">Integrante del servicio de médicina clínica del hospital escuela de la FCV-UBA. Docente del área de clínica médica de pequeños animales FCV-UBA. Egresada de la Facultad de Ciencias Veterinarias (UBA)</p>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+
+        </section>
+    </section>
+
+</main>
+
+<div class="container-footer-img">
+     
+</div>
+<footer>
+    <div class="container mx-auto container-footer">
+        <div class="div-footer">
+            <ul class="list-footer">
+                <h6 class="h6-footer sub-title">PRODUCTOS</h6>
+                <br>
+                <a href="#" class="paragraph">Farmacia</a>
+                <a href="#" class="paragraph">Alimento</a>
+                <a href="#" class="paragraph">Juguetes</a>
+            </ul>
+        </div>
+    
+        <div class="div-footer">
+            <ul class="list-footer">
+                <h6 class="h6-footer sub-title">PRODUCTOS</h6>
+                <br>
+                <a href="#" class="paragraph">Farmacia</a>
+                <a href="#" class="paragraph">Alimento</a>
+                <a href="#" class="paragraph">Juguetes</a>
+            </ul>
+        </div>
+    
+        <div class="div-footer">
+          <ul class="list-footer">
+            <h6 class="h6-footer sub-title">SERVICIOS</h6>
+            <br>
+            <a href="#" class="paragraph">Clínica Médica</a>
+            <a href="/servicios/cirugías.html" class="paragraph">Cirugía</a>
+            <a href="/servicios/cardiologia.html" class="paragraph">Cardiología</a>
+            <a href="/servicios/oftalmología.html" class="paragraph">Oftalmología</a>
+        </ul>
+      </div>
+
+      <div class="div-footer">
+          <ul>
+              <h6 class="h6-footer sub-title">SUSCRIBETE</h6>
+              
+              <input type="text" placeholder="Ingresa tu email">
+              <div>
+                <br>
+              <a href="" id="sub-footer">Suscribirse</a>
+              </div>
+          </ul>
+      </div>
+    </div>
+</footer>
+
+     <!--JavaScript-->
+    <script src='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js'></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+     <script type="text/javascript">$(window).load(function() {$(".loader").fadeOut("slow");});</script>
+     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
+     <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js'></script>
+     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+     <script src="../assets/js/scripts.js"></script>
+
+</body>
+</html>

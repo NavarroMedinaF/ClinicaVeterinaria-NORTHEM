@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinica Northem | Planes - Obra Social</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/northem_icon.ico">
+
+  <!--Tailwind css-->
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!--Icons-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css'>
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+
+</head>
+
+<body>
+  <div class="loader"></div>
+
+  <header>
+
+    <!--Social-->
+    <section class="info-clinic">
+      <div class="container-contact">
+        <div class="location">
+          <i class="bi bi-geo-alt"></i>
+          <p>Zeballos 1232, Rosario Santa Fe</p>
+        </div>
+
+        <div class="mail" style="margin-left: 1.5vh; margin-right: 1.5vh;">
+          <i class="bi bi-envelope"></i>
+          <p>northem@contacto.com</p>
+        </div>
+
+        <div class="phone">
+          <i class="bi bi-telephone-forward"></i>
+          <p>+54 3412632166</p>
+        </div>
+
+      </div>
+      <div class="container-social">
+        <i class="bi bi-instagram"></i>
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-twitter"></i>
+      </div>
+    </section>
+
+    <!--Navbar-->
+    <section id="header" class="">
+      <section class="wrapper transition-banner">
+
+        <img src="assets/img/logo.png" class="brand" width="165">
+        <div class="flex" style="align-items: center;" >
+                 <a href="/carrito.html" class="mx-5"><i class="bi bi-cart-check" style="font-size: 3vh;"
+              id="card-shop-mobile"></i></a>
+                    <div class="burger" id="burger">
+                    <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </div>
+        </div>
+
+        <span class="overlay">
+
+        </span>
+
+        <nav class="navbar" id="navbar">
+
+          <ul class="menu" id="menu">
+         
+              <a href="/index.html"><img src="assets/img/logo.png" class="brand" width="200" style="margin-left: 10px;" id="img-nav-mobile"></a>
+
+       
+
+            <!--class="brand" width="200" style="margin-left: 10px;" id="img-nav-mobile"--> 
+           
+            
+            <li class="menu-item"><a href="index.html" class="menu-link">Inicio</a></li>
+
+            <li class="menu-item menu-dropdown">
+              <span class="menu-link " data-toggle="submenu">Especialistas<i class="bx bx-chevron-down"></i></span>
+              <ul class="submenu">
+                <li class="submenu-item"><a href="servicios/clinica-medica.html" class="submenu-link">Clínica Médica</a>
+                </li>
+                <li class="submenu-item"><a href="servicios/oftalmología.html" class="submenu-link">Oftalmología</a>
+                </li>
+                <li class="submenu-item"><a href="servicios/cardiologia.html" class="submenu-link">Cardiologia</a></li>
+                <li class="submenu-item"><a href="servicios/cirugías.html" class="submenu-link">Cirugía</a></li>
+              </ul>
+            </li>
+            <li class="menu-item active"><a href="#" class="menu-link">Obra Social</a></li>
+            <li class="menu-item"><a href="/tienda.html" class="menu-link">Tienda</a></li>
+            <li class="menu-item"><a href="/contacto.html" class="menu-link">Contacto</a></li>
+            <li class="menu-item"><a href="/iniciar-sesion.html" class="menu-link" id="login-btn">Iniciar Sesion</a>
+            </li>
+            <li class="menu-item"><a href="/carrito.html" class="menu-link" id="card-shop-pc"><i
+                  class="bi bi-cart-check" style="font-size: 3vh;"></i></a></li>
+          </ul>
+        </nav>
+      </section>
+    </section>
+
+    <!--Banner-->
+    <section id="img-banner">
+      <section class="banner">
+        <div class="overflow-hidden flex flex-nowrap  slider-banner" id="slider">
+          <div class=" flex-none w-full  slider-banner4">
+
+            <h1 class="title sub-banner1 h1-p" style="color: var(--main)">SERVICIOS<br>Y PRECIOS</h1>
+            <h1 class="title sub-banner1 h1-m" style="color: var(--main);">SERVICIOS<br>Y PRECIOS</h1>
+            <h3 class="sub-title p-banner-social-works obrasocial-text" >Olvídese de las conjeturas al brindarle a
+              su mascota la atención que necesita. Ya sea que elija un servicio individual o un paquete de servicios.
+            </h3>
+
+          </div>
+        </div>
+
+      </section>
+    </section>
+
+  </header>
+
+  <main>
+
+    <div class="social-works">
+      <h2 class="title">Nuestras Obras Sociales</h2>
+      <br>
+      <p class="paragraph">Cada uno de nuestros paquetes de servicios combinados incluye una serie preestablecida de
+        vacunas y exámenes de detección recomendados por veterinarios a una tarifa conveniente y con descuento</p>
+    </div>
+
+    <section class="social-works-cards container mx-auto">
+
+      <div class="box-social-work-social">
+
+        <h2 class="title title-social">Plan Northem 200</h2>
+        <br>
+        <span class="paragraph">Solamente</span>
+        <h5 class="sub-title">$600</h5>
+        <br>
+        <div class="list-social-work text-left">
+
+          <div class="list-chek">
+            <i class="bi bi-check-circle-fill"></i>
+            <span class="paragraph">Veterinario en Línea las 24 h</span>
+          </div>
+          <div class="list-chek">
+            <i class="bi bi-check-circle-fill"></i>
+            <span class="paragraph">Cuidado de tu mascota (controles, vacunas, traslados, pipetas y
+              desparasitaciones).</span>
+          </div>
+          <div class="list-chek">
+            <i class="bi bi-x-circle-fill" style="color: red;"></i>
+            <span class="paragraph">Descuento del 15% en compra de alimentos y juguetes</span>
+          </div>
+
+          <div class="list-chek">
+            <i class="bi bi-x-circle-fill" style="color: red;"></i>
+            <span class="paragraph"> Castraciones de tu mascota (simples, operaciones para esterilización).</span>
+          </div>
+
+          <div class="list-chek">
+            <i class="bi bi-x-circle-fill" style="color: red;"></i>
+            <span class="paragraph"> Bienestar de tu mascota (guardería, terapias alternativas, adiestramiento).</span>
+          </div>
+
+
+
+
+          <br>
+          <div class="button-social-work">
+            <a href="iniciar-sesion.html" id="btn-social-work">Adquirir Plan</a>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="box-social-work-social">
+
+        <h2 class="title title-social">Plan Northem 500</h2>
+        <br>
+        <span class="paragraph">Solamente</span>
+        <h5 class="sub-title">$1.200</h5>
+        <br>
+        <div class="list-social-work text-left">
+
+          <div class="list-chek">
+            <i class="bi bi-check-circle-fill"></i>
+            <span class="paragraph">Veterinario en Línea las 24 h</span>
+          </div>
+
+          <div class="list-chek">
+            <i class="bi bi-check-circle-fill"></i>
+            <span class="paragraph"> Cuidado de tu mascota (controles, vacunas, traslados, pipetas y
+              desparasitaciones).</span>
+          </div>
+
+          <div class="list-chek">
+            <i class="bi bi-check-circle-fill"></i>
+            <span class="paragraph"> Castraciones de tu mascota (simples, operaciones para esterilización).</span>
+          </div>
+
+          <div class="list-chek">
+            <i class="bi bi-x-circle-fill" style="color: red;"></i>
+            <span class="paragraph"> Bienestar de tu mascota (guardería, terapias alternativas, adiestramiento).</span>
+          </div>
+
+          <div class="list-chek">
+            <i class="bi bi-x-circle-fill" style="color: red;"></i>
+            <span class="paragraph"> Descuento del 25% en compra de alimentos y juguetes</span>
+          </div>
+
+
+          <br>
+          <div class="button-social-work">
+            <a href="iniciar-sesion.html" id="btn-social-work">Adquirir Plan</a>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="box-social-work-social">
+
+        <h2 class="title title-social">Plan Northem 800</h2>
+        <br>
+        <span class="paragraph">Solamente</span>
+        <h5 class="sub-title">$1.800</h5>
+        <br>
+        <div class="list-social-work text-left">
+
+          <div class="list-chek">
+            <i class="bi bi-check-circle-fill"></i>
+            <span class="paragraph">Veterinario en Línea las 24 h</span>
+          </div>
+
+          <div class="list-chek">
+            <i class="bi bi-check-circle-fill"></i>
+            <span class="paragraph"> Cuidado de tu mascota (controles, vacunas, traslados, pipetas y
+              desparasitaciones).</span>
+          </div>
+
+          <div class="list-chek">
+            <i class="bi bi-check-circle-fill"></i>
+            <span class="paragraph"> Castraciones de tu mascota (simples, operaciones para esterilización).</span>
+          </div>
+
+          <div class="list-chek">
+            <i class="bi bi-check-circle-fill"></i>
+            <span class="paragraph"> Bienestar de tu mascota (guardería, terapias alternativas, adiestramiento).</span>
+          </div>
+
+          <div class="list-chek">
+            <i class="bi bi-check-circle-fill"></i>
+            <span class="paragraph"> Descuento del 35% en compra de alimentos y juguetes</span>
+          </div>
+
+
+          <br>
+          <div class="button-social-work">
+            <a href="iniciar-sesion.html" id="btn-social-work">Adquirir Plan</a>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="container-works-card-mobile container mx-auto">
+      <div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
+          loop: true,
+          slidesPerView: 1,
+          spaceBetween: 0,
+      
+          breakpoints: {
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 0,
+            },
+          },
+        })" class="relative w-10/12 mx-auto flex flex-row">
+        <div class="absolute inset-y-0 left-0 z-10 flex items-center">
+          <button @click="swiper.slidePrev()"
+            class="bg-white -ml-2 lg:-ml-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+            <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-6 h-6">
+              <path fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="swiper-container" x-ref="container">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide p-4">
+              <div class="flex flex-col rounded  overflow-hidden">
+                <div class="flex-shrink-0">
+                  <div class="box-social-work ">
+
+                    <h2 class="title title-social">Plan Northem 200</h2>
+                    <br>
+                    <span class="paragraph">Solamente</span>
+                    <h5 class="sub-title">$600</h5>
+                    <span class="paragraph">por mes*</span>
+                    <br>
+                    <div class="list-social-work text-left">
+
+                      <div class="list-chek">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span class="paragraph">Veterinario en Línea las 24 h
+
+                        </span>
+                      </div>
+
+                      <div class="list-chek">
+                        <i class="bi bi-x-circle-fill" style="color: red;"></i>
+                        <span class="paragraph"> Cuidado de tu mascota (controles, vacunas, traslados, pipetas y
+                          desparasitaciones).</span>
+                      </div>
+
+                      <div class="list-chek">
+                        <i class="bi bi-x-circle-fill" style="color: red;"></i>
+                        <span class="paragraph"> Castraciones de tu mascota (simples, operaciones para esterilización).
+
+                        </span>
+                      </div>
+                      <div class="list-chek">
+                        <i class="bi bi-x-circle-fill" style="color: red;"></i>
+                        <span class="paragraph"> Bienestar de tu mascota (guardería, terapias alternativas,
+                          adiestramiento).
+
+                        </span>
+                      </div>
+                      <div class="list-chek">
+                        <i class="bi bi-x-circle-fill" style="color: red;"></i>
+                        <span class="paragraph"> Descuento del 20% en compra de alimentos y juguetes
+
+                        </span>
+                      </div>
+
+
+                      <br>
+                      <div class="button-social-work">
+                        <a href="iniciar-sesion.html" id="btn-social-work">Adquirir Plan</a>
+                      </div>
+
+
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide p-4">
+              <div class="flex flex-col rounded  overflow-hidden">
+                <div class="flex-shrink-0">
+                  <div class="box-social-work">
+
+                    <h2 class="title title-social">Plan Northem 500</h2>
+                    <br>
+                    <span class="paragraph">Solamente</span>
+                    <h5 class="sub-title">$1.200</h5>
+                    <span class="paragraph">por mes*</span>
+                    <br>
+                    <div class="list-social-work text-left">
+
+                      <div class="list-chek">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span class="paragraph">Veterinario en Línea las 24 h
+
+                        </span>
+                      </div>
+
+                      <div class="list-chek">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span class="paragraph"> Cuidado de tu mascota (controles, vacunas, traslados, pipetas y
+                          desparasitaciones).</span>
+                      </div>
+
+                      <div class="list-chek">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span class="paragraph"> Castraciones de tu mascota (simples, operaciones para esterilización).
+
+                        </span>
+                      </div>
+                      <div class="list-chek">
+                        <i class="bi bi-x-circle-fill" style="color: red;"></i>
+                        <span class="paragraph"> Bienestar de tu mascota (guardería, terapias alternativas,
+                          adiestramiento).
+
+                        </span>
+                      </div>
+                      <div class="list-chek">
+                        <i class="bi bi-x-circle-fill" style="color: red;"></i>
+                        <span class="paragraph"> Descuento del 20% en compra de alimentos y juguetes
+
+                        </span>
+                      </div>
+
+
+                      <br>
+                      <div class="button-social-work">
+                        <a href="iniciar-sesion.html" id="btn-social-work">Adquirir Plan</a>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide p-4">
+              <div class="flex flex-col rounded  overflow-hidden">
+                <div class="flex-shrink-0">
+                  <div class="box-social-work">
+
+                    <h2 class="title title-social">Plan Northem 800</h2>
+                    <br>
+                    <span class="paragraph">Solamente</span>
+                    <h5 class="sub-title">$1.800</h5>
+                    <span class="paragraph">por mes*</span>
+                    <br>
+                    <div class="list-social-work text-left">
+
+                      <div class="list-chek">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span class="paragraph">Veterinario en Línea las 24 h
+
+                        </span>
+                      </div>
+
+                      <div class="list-chek">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span class="paragraph"> Cuidado de tu mascota (controles, vacunas, traslados, pipetas y
+                          desparasitaciones).</span>
+                      </div>
+
+                      <div class="list-chek">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span class="paragraph"> Castraciones de tu mascota (simples, operaciones para esterilización).
+
+                        </span>
+                      </div>
+                      <div class="list-chek">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span class="paragraph"> Bienestar de tu mascota (guardería, terapias alternativas,
+                          adiestramiento).
+
+                        </span>
+                      </div>
+                      <div class="list-chek">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span class="paragraph"> Descuento del 20% en compra de alimentos y juguetes
+
+                        </span>
+                      </div>
+
+
+                      <br>
+                      <div class="button-social-work text-left">
+                        <a href="iniciar-sesion.html" id="btn-social-work">Adquirir Plan</a>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute inset-y-0 right-0 z-10 flex items-center">
+          <button @click="swiper.slideNext()"
+            class="bg-white -mr-2 lg:-mr-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+            <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-6 h-6">
+              <path fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="title-social-work">
+      <h2 class="title">Complementos para los Planes de la Obra Social</h2>
+    </div>
+
+
+    <section class="container mx-auto container-extra-socialwork container-display">
+      <div class="box-extra-social">
+        <div class="mr-8">
+
+          <div class="bg-white max-w-xl mx-auto border border-gray-200" x-data="{selected:1}">
+            <ul class="shadow-box">
+
+              <li class="relative border-b border-gray-200">
+
+                <button type="button" class="w-full px-8 py-6 text-left"
+                  @click="selected !== 1 ? selected = 1 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Vacuna antirrábica IMRAB® </b></span>
+                    <span class="ico-plus"><b>$1500 </b></span>
+
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container1"
+                  x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+                    <p class="paragraph text-justify">La rabia es una infección viral del sistema nervioso central que puede afectar a todos los
+                      mamíferos, incluidos los humanos, y es 100 % mortal si no se trata. </p>
+                  </div>
+
+              </li>
+
+
+              <li class="relative border-b border-gray-200">
+
+                <button type="button" class="w-full px-8 py-6 text-left"
+                  @click="selected !== 2 ? selected = 2 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Detección de parásitos intestinales </b></span>
+                    <span class="ico-plus"><b>$800</b></span>
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container2"
+                  x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+                    <p class="paragraph text-justify">Consiste en tomar una
+                      muestra de heces y examinarla microscópicamente en busca de parásitos intestinales comunes como
+                      lombrices intestinales, anquilostomas, tricocéfalos, giardia y coccidios.</p>
+                  </div>
+                </div>
+
+              </li>
+
+
+              <li class="relative border-b border-gray-200">
+
+                <button type="button" class="w-full px-8 py-6 text-left"
+                  @click="selected !== 4 ? selected = 4 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Prueba de enfermedad del gusano del corazón </b> </span>
+                    <span class="ico-plus"><b>$1800</b></span>
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container4"
+                  x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+
+                    <p class="paragraph text-justify">Es una enfermedad grave que ocasiona una enfermedad pulmonar severa, insuficiencia cardíaca, daño a otro órgano, y muerte en
+                      las mascotas. Es causada por una lombriz
+                      parasítica conocida como Dirofilaria immitis.</p>
+                  </div>
+                </div>
+
+              </li>
+
+              <li class="relative border-b border-gray-200">
+
+                <button type="button" class="w-full px-8 py-6 text-left"
+                  @click="selected !== 3 ? selected = 3 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Vacuna contra la enfermedad de Lyme </b></span>
+                    <span class="ico-plus"><b>$2000</b></span>
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container3"
+                  x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+
+                    <p class="paragraph text-justify">Es causada por la bacteria Borrelia
+                      burgdorferi, que se transmite por la picadura de una garrapata. Esta vacunación ayuda a prevenir
+                      la infección, incluso en animales previamente infectados.</p>
+                  </div>
+                </div>
+
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="box-extra-social">
+        <div class="mr-8">
+
+          <div class="bg-white max-w-xl mx-auto border border-gray-200" x-data="{selected:1}">
+            <ul class="shadow-box">
+
+              <li class="relative border-b border-gray-200">
+
+                <button type="button" class="w-full px-8 py-6 text-left"
+                  @click="selected !== 1 ? selected = 1 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Vacuna contra la influenza (H3N8/H3N2) </b> </span>
+                    <span class="ico-plus"><b>$1900</b></span>
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container1"
+                  x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+                    <p class="paragraph text-justify">Es una enfermedad respiratoria
+                      altamente infecciosa que se observa con mayor frecuencia en perros socialmente activos. El riesgo
+                      más alto incluye a los perros que asisten con frecuencia a parques para perros, guarderías para
+                      perros.</p>
+                  </div>
+
+              </li>
+
+
+              <li class="relative border-b border-gray-200">
+
+                <button type="button" class="w-full px-8 py-6 text-left"
+                  @click="selected !== 2 ? selected = 2 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Análisis de sangre especial </b> </span>
+                    <span class="ico-plus"><b>$3000</b></span>
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container2"
+                  x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+                    <p class="paragraph text-justify">Se compone de un panel de pruebas conocido como Perfil Bioquímico
+                      y Conteo Sanguíneo Completo (CBC). Es para gatos y perros, de cualquier edad, para detectar
+                      problemas médicos internos.</p>
+                  </div>
+                </div>
+
+              </li>
+
+
+              <li class="relative border-b border-gray-200">
+
+                <button type="button" class="w-full px-8 py-6 text-left"
+                  @click="selected !== 3 ? selected = 3 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Paquete de bienestar completo </b> </span>
+                    <span class="ico-plus"><b>$4000</b></span>
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container3"
+                  x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+
+                    <p class="paragraph text-justify">El paquete incluye análisis de sangre, orina y una muestra fecal
+                      para ayudar al veterinario a evaluar la salud general de su mascota y detectar ciertos procesos de
+                      enfermedades.</p>
+                  </div>
+                </div>
+
+              </li>
+
+              <li class="relative border-b border-gray-200">
+
+                <button type="button" class="w-full px-8 py-6 text-left"
+                  @click="selected !== 5 ? selected = 5 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Examen para detectar Distemper </b> </span>
+                    <span class="ico-plus"><b>$3200</b></span>
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container5"
+                  x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+
+                    <p class="paragraph text-justify">Es una enfermedad altamente contagiosa causada
+                      por un virus que afecta los aparatos respiratorio, gastrointestinal, y a menudo, el sistema
+                      nervioso de los cachorritos y perros adultos. </p>
+                  </div>
+                </div>
+
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="container mx-auto container-extra-socialwork container-display-responsive">
+      <div class="box-extra-social">
+        <div class="mr-8">
+
+          <div class="bg-white max-w-xl mx-auto border border-gray-200" x-data="{selected:1}">
+            <ul class="shadow-box">
+
+              <li class="relative border-b border-gray-200">
+                <button type="button" class="w-full px-8 py-4 text-left"
+                  @click="selected !== 1 ? selected = 1 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                         Vacuna antirrábica IMRAB®</b></span>
+                    <span class="ico-plus"><b>$1500 </b></span>
+                  </div>
+                </button>
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container1"
+                  x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+                    <p class="paragraph text-justify">La rabia es una infección viral del sistema nervioso central que puede afectar a todos los
+                      mamíferos, incluidos los humanos, y es 100 % mortal si no se trata. </p>
+                  </div>
+              </li>
+
+
+              <li class="relative border-b border-gray-200">
+                <button type="button" class="w-full px-8 py-4 text-left"
+                  @click="selected !== 2 ? selected = 2 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Detección de parásitos intestinales </b></span>
+                    <span class="ico-plus"><b>$800</b></span>
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container2"
+                  x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+                    <p class="paragraph text-justify">Consiste en tomar una
+                      muestra de heces y examinarla microscópicamente en busca de parásitos intestinales comunes como
+                      lombrices intestinales, anquilostomas, tricocéfalos, giardia y coccidios.</p>
+                  </div>
+                </div>
+
+              </li>
+
+
+              <li class="relative border-b border-gray-200">
+
+                <button type="button" class="w-full px-8 py-4 text-left"
+                  @click="selected !== 4 ? selected = 4 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Prueba de enfermedad del gusano del corazón </b> </span>
+                    <span class="ico-plus"><b>$1800</b></span>
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container4"
+                  x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+
+                    <p class="paragraph text-justify">Es una enfermedad grave que
+                      ocasiona una enfermedad pulmonar severa, insuficiencia cardíaca, daño a otro órgano, y muerte en
+                      las mascotas. Es causada por una lombriz
+                      parasítica conocida como Dirofilaria immitis.</p>
+                  </div>
+                </div>
+
+              </li>
+
+              <li class="relative border-b border-gray-200">
+
+                <button type="button" class="w-full px-8 py-4 text-left"
+                  @click="selected !== 3 ? selected = 3 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Vacuna contra la enfermedad de Lyme </b></span>
+                    <span class="ico-plus"><b>$2000</b></span>
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container3"
+                  x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+
+                    <p class="paragraph text-justify">Es causada por la bacteria Borrelia
+                      burgdorferi, que se transmite por la picadura de una garrapata. Esta vacunación ayuda a prevenir
+                      la infección, incluso en animales previamente infectados.</p>
+                  </div>
+                </div>
+
+              </li>
+                <li class="relative border-b border-gray-200">
+
+                <button type="button" class="w-full px-8 py-4 text-left"
+                  @click="selected !== 6 ? selected = 6 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Vacuna contra la influenza (H3N8/H3N2) </b> </span>
+                    <span class="ico-plus"><b>$1900</b></span>
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container1"
+                  x-bind:style="selected == 6 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+                    <p class="paragraph text-justify">Es una enfermedad respiratoria
+                      altamente infecciosa que se observa con mayor frecuencia en perros socialmente activos. El riesgo
+                      más alto incluye a los perros que asisten con frecuencia a parques para perros, guarderías para
+                      perros.</p>
+                  </div>
+
+              </li>
+
+
+              <li class="relative border-b border-gray-200">
+
+                <button type="button" class="w-full px-8 py-4 text-left"
+                  @click="selected !== 7 ? selected = 7 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Análisis de sangre especial </b> </span>
+                    <span class="ico-plus"><b>$3000</b></span>
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container2"
+                  x-bind:style="selected == 7 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+                    <p class="paragraph text-justify">Se compone de un panel de pruebas conocido como Perfil Bioquímico
+                      y Conteo Sanguíneo Completo (CBC). Es para gatos y perros, de cualquier edad, para detectar
+                      problemas médicos internos.</p>
+                  </div>
+                </div>
+
+              </li>
+
+
+              <li class="relative border-b border-gray-200">
+
+                <button type="button" class="w-full px-8 py-4 text-left"
+                  @click="selected !== 8 ? selected = 8 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Paquete de bienestar completo </b> </span>
+                    <span class="ico-plus"><b>$4000</b></span>
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container3"
+                  x-bind:style="selected == 8 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+
+                    <p class="paragraph text-justify">El paquete incluye análisis de sangre, orina y una muestra fecal
+                      para ayudar al veterinario a evaluar la salud general de su mascota y detectar ciertos procesos de
+                      enfermedades.</p>
+                  </div>
+                </div>
+
+              </li>
+
+              <li class="relative border-b border-gray-200">
+
+                <button type="button" class="w-full px-8 py-4 text-left"
+                  @click="selected !== 5 ? selected = 5 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span><b>
+                        Examen para detectar Distemper </b> </span>
+                    <span class="ico-plus"><b>$3200</b></span>
+                  </div>
+                </button>
+
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container5"
+                  x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''">
+                  <div class="p-6">
+
+                    <p class="paragraph text-justify">Es una enfermedad altamente contagiosa causada
+                      por un virus que afecta los aparatos respiratorio, gastrointestinal, y a menudo, el sistema
+                      nervioso de los cachorritos y perros adultos. El virus también infecta a cánidos salvajes.</p>
+                  </div>
+                </div>
+
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+
+              
+
+            
+
+    </section>
+  </main>
+
+  <div class="container-footer-img">
+
+  </div>
+  <footer>
+    <div class="container mx-auto container-footer">
+      <div class="div-footer">
+        <ul class="list-footer">
+          <h6 class="h6-footer sub-title">NUESTRA EMPRESA</h6>
+          <a href="" class="paragraph">Quienes somos?</a>
+          <a href="" class="paragraph">Visión</a>
+          <a href="" class="paragraph">Misión</a>
+          <a href=""></a>
+          <a href=""></a>
+        </ul>
+      </div>
+
+
+      <div class="div-footer">
+        <ul class="list-footer">
+          <h6 class="h6-footer sub-title">PRODUCTOS</h6>
+          <br>
+          <a href="/tienda.html" class="paragraph">Farmacia</a>
+          <a href="/tienda.html" class="paragraph">Alimento</a>
+          <a href="/tienda.html" class="paragraph">Juguetes</a>
+        </ul>
+      </div>
+
+      <div class="div-footer">
+        <ul class="list-footer">
+          <h6 class="h6-footer sub-title">SERVICIOS</h6>
+          <br>
+          <a href="/servicios/clinica-medica.html" class="paragraph">Clínica Médica</a>
+          <a href="/servicios/cirugías.html" class="paragraph">Cirugía</a>
+          <a href="/servicios/cardiologia.html" class="paragraph">Cardiología</a>
+          <a href="/servicios/oftalmología.html" class="paragraph">Oftalmología</a>
+        </ul>
+      </div>
+      <div class="div-footer">
+        <ul>
+          <h6 class="h6-footer sub-title">SUSCRIBETE</h6>
+
+          <input type="text" placeholder="Ingresa tu email">
+          <div>
+            <br>
+            <a href="" id="sub-footer">Suscribirse</a>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!--JavaScript-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script type="text/javascript">$(window).load(function() {$(".loader").fadeOut("slow");});</script>
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
+  <script src='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="assets/js/scripts.js"></script>
+
+
+</body>
+
+</html>

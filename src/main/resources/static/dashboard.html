@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinica Northem | Inicio</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/northem_icon.ico">
+
+ <!--Icons-->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+ <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
+
+ <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+ <link rel="stylesheet" href="./assets/css/style.css" />
+
+</head>
+
+<body>
+
+  <div class="loader"></div>
+  <header>
+
+    <!--Social-->
+    <section class="info-clinic">
+      <div class="container-contact">
+        <div class="location">
+          <i class="bi bi-geo-alt"></i>
+          <p>Zeballos 1232, Rosario Santa Fe</p>
+        </div>
+
+        <div class="mail" style="margin-left: 1.5vh; margin-right: 1.5vh;">
+          <i class="bi bi-envelope"></i>
+          <p>northem@contacto.com</p>
+        </div>
+
+        <div class="phone">
+          <i class="bi bi-telephone-forward"></i>
+          <p>+54 3412632166</p>
+        </div>
+
+      </div>
+      <div class="container-social">
+        <i class="bi bi-instagram"></i>
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-twitter"></i>
+      </div>
+    </section>
+
+    <!--Navbar-->
+    <section id="header" class="">
+      <section class="wrapper transition-banner">
+
+        <img src="assets/img/logo.png" class="brand" width="165">
+        <div class="flex">
+          <a href="/carrito.html" class="mx-5"><i class="bi bi-cart-check" style="font-size: 3vh;"
+              id="card-shop-mobile"></i></a>
+          <div class="burger" id="burger">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </div>
+        </div>
+
+        <span class="overlay">
+
+        </span>
+
+        <nav class="navbar" id="navbar">
+
+          <ul class="menu" id="menu">
+            <img src="assets/img/logo.png" class="brand" width="200" style="margin-left: 10px;" id="img-nav-mobile">
+            <li class="menu-item"><a href="index.html" class="menu-link">Inicio</a></li>
+
+            <li class="menu-item menu-dropdown">
+              <span class="menu-link " data-toggle="submenu">Especialistas<i class="bx bx-chevron-down"></i></span>
+              <ul class="submenu">
+                <li class="submenu-item"><a href="servicios/clinica-medica.html" class="submenu-link">Clínica Médica</a>
+                </li>
+                <li class="submenu-item"><a href="servicios/oftalmología.html" class="submenu-link">Oftalmología</a>
+                </li>
+                <li class="submenu-item"><a href="servicios/cardiologia.html" class="submenu-link">Cardiologia</a></li>
+                <li class="submenu-item"><a href="servicios/cirugías.html" class="submenu-link">Cirugía</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="/obra-social.html" class="menu-link">Obra Social</a></li>
+            <li class="menu-item"><a href="/tienda.html" class="menu-link">Tienda</a></li>
+            <li class="menu-item"><a href="/contacto.html" class="menu-link">Contacto</a></li>
+
+            <li class="menu-item"><a href="/iniciar-sesion.html" class="menu-link" id="login-btn">Iniciar Sesion</a>
+            </li>
+            <li class="menu-item"><a href="/carrito.html" class="menu-link" id="card-shop-pc"><i
+                  class="bi bi-cart-check" style="font-size: 3vh;"></i></a></li>
+          </ul>
+        </nav>
+      </section>
+    </section>
+
+    <!--Banner-->
+    <section id="img-banner">
+    </section>
+
+  </header>
+
+
+  <main class="client-dashboard" id="app">
+
+    <section class="container-dashbaoard-client container mx-auto">
+
+      <!--Perfil-->
+      <div class="container-profile">
+
+        <div class="container-profile-img">
+          <!--Colocar imagen de perfil-->
+        </div>
+
+        <div class="container-profile-info">
+          <h2>{{clients.name + " " + clients.lastName}}</h2>
+          <h4>{{clients.address}}, {{clients.city + " " + clients.state}}</h4>
+          <h4>{{clients.email}}</h4>
+
+          <div class="container-btn-edit-profile">
+            
+          </div>
+        </div>
+      </div>
+
+      <!--Obra social y turnos-->
+      <div class="container-social-turns">
+
+        <!--Obra social-->
+        <div class="container-social-work-card">
+          <h1>Obra Social</h1>
+
+          <section class="contenedor-tarjeta-obra-social">
+            <div v-if="prepaid.length == 0">
+              <h5>NO CUENTAS CON UNA OBRA SOCIAL, SOLICITA UNA PARA OBTENER BENEFICIOS EXCLUSIVOS!</h5>
+                    
+              <div class="container-social-work-card-btn">
+                  <a  href="select-social.html">Solicitar obra social</a>
+              </div>
+            </div>
+            <div v-else v-for="cardprepaid in prepaid"
+              class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 card-obra-social">
+              <img src="./assets/img/logo.png" alt="logo" style="width: 10rem;">
+              <div class="text-card">
+                <p class="paragraph text-center">{{cardprepaid.associateNumber}}</p>
+                <p class="paragraph text-center">{{cardprepaid.category.name}}</p>
+              </div>
+              <div class="flex justify-between">
+                <p class="paragraph"><b>{{clients.name + " " + clients.lastName}}</b></p>
+                <p class="paragraph">Desc <b>{{cardprepaid.category.discount}}</b></p>
+              </div>
+            </div>
+          </section>
+
+          <div v-if="prepaid.length > 0" class="container-social-work-card-btn-existing">
+
+            <div class="button-card-box1">
+              <a href="select-social.html">Actualizar</a>
+            </div>
+
+            <div class="button-card-box2">
+              <a @click="deletePrepaid()">Dar de baja</a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!--Turnos-->
+        <div class="container-customer-shifts">
+          <h1>Tus turnos</h1>
+          <div v-if="shifts.length == 0">
+            <h5>NO CUENTAS CON TURNOS PROXIMOS, SOLICITAR UN TURNO NUNCA FUE TAN FACIL!</h5>
+                    
+            <div class="container-shifts-btn">
+                <a href="#" data-modal-toggle="popup-modal">Solicitar turno medico</a>
+            </div>
+          </div>
+
+          <div v-else class="table1">
+            <table>
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Motivo</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="shift in shifts">
+                  <td>{{dateTurn(shift.date)}}</td>
+                  <td>{{hourTurn(shift.date)}}</td>
+                  <td>{{shift.reason}}</td>
+                  <td>
+                    <a href="."><i :class="new Date(shift.date).getDay(2) < new Date().getDay()? 'bi bi-trash3' : 'bi bi-x-circle'" id="trash-shifts"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div v-if="shifts.length > 0" class="container-shifts-btn-existing">
+            <a href="#" data-modal-toggle="popup-modal2">Solicitar turno medico</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!--Mascotas-->
+      <div class="container-pet-list">
+        <div class="container-pets">
+          <h1>Mascotas</h1>
+          <div  class="container-pets-main">
+            <div class="box-container-pet" v-for="pet in pets">
+              <div class="img-pet">
+                <img v-if="pet.medicalHistory.petType == 'PERRO'" src="assets/img/perro.png" width="150"> <img v-else
+                  src="https://cdn.images.express.co.uk/img/dynamic/128/590x/secondary/1695285.jpg?r=1547815112963" width="150">
+              </div>
+              <div class="name-pet">
+                <h4>{{pet.name}}</h4>
+                <button @click="getPet(pet.id)">Mas informacion</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-pets-info" v-show="idPet != 0">
+          <div v-for="onlyPet in pet" class="perfil-pet">
+            <img v-if="onlyPet.medicalHistory.petType == 'GATO'"
+              src="https://cdn.images.express.co.uk/img/dynamic/128/590x/secondary/1695285.jpg?r=1547815112963" width="210">
+            <img v-else src="assets/img/perro.png" width="210">
+            <div class="info-pet">
+              <h3><span id="info-pet">Nombre: </span>{{onlyPet.name}}</h3>
+              <h3><span id="info-pet">Tipo de mascota: </span>{{onlyPet.race}}</h3>
+              <h3><span id="info-pet">Raza: </span>{{onlyPet.medicalHistory.petType}}</h3>
+              <h3><span id="info-pet">Peso: </span>{{onlyPet.weight}}Kg</h3>
+              <h3><span id="info-pet">Edad: </span>{{onlyPet.age}}</h3>
+            </div>
+          </div>
+
+          <div class="pet-shifts">
+            <h2>Proximos turnos de tu mascota</h2>
+          <div v-if="onlyPetShifts.length == 0">
+            <h5>NO CUENTAS CON TURNOS PROXIMOS</h5>
+          </div>
+            <div v-else class="table1">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Motivo</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody v-for="shift in onlyPetShifts">
+                  <tr>
+                    <td>{{dateTurn(shift.date)}}</td>
+                    <td>{{hourTurn(shift.date)}}</td>
+                    <td>{{shift.reason}}</td>
+                    <td><a href="."><i :class="new Date(shift.date).getDay(2) < new Date().getDay()? 'bi bi-trash3' : 'bi bi-x-circle'" id="trash-shifts" @click=""></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!--Historial de compra-->
+      <div class="container-purchase-history">
+        <h1>Historial de compras</h1>
+        <div v-if="arrayCarritoDeCompras.length == 0">
+          <h5>NO CUENTAS CON COMPRAS REALIZADAS</h5>
+        </div>
+        <div class="table1" id="table-shop">
+          <table>
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Monto total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="holas in purchases">
+                <td> {{dateTurn(holas.datePurchase)}}</td>
+
+                <td>
+                  {{hourTurn(holas.datePurchase)}}
+                </td>
+                <td>
+                  $ {{holas.amount}}
+                </td>
+                <td>
+                  <a href="."><i class="bi bi-trash3" id="trash-shifts"></i></a>
+                </td>
+              </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+      <!-- modal turno1-->
+  
+        <div id="popup-modal" tabindex="-1"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full"
+        aria-hidden="true">
+          <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+              <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                  <h2 class="text-center">Solicita Turno</h2>
+                  <button type="button"
+                      class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                      data-modal-toggle="popup-modal">
+                      <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                              clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                  </button>
+                  <div class="p-6">
+                      <form>
+                        <h2 class="sub-title">Select para elegir el tipo de turno (para cliente/ para mascota)</h2>
+                        <br>
+                          <select name="" id="" v-model="tipoTurnoDeShifts">
+                              <option value="" disabled selected>Eliga una opcion</option>
+                              <option value="cliente">Cliente</option>
+                              <option value="mascota">Mascota</option>
+                          </select>
+
+                        {{FfffTipoTurno}} <!-- muestra si elegiste turno para mascota o cliente -->
+              
+                        <div v-if="tipoTurnoDeShifts == 'mascota'">
+                            <label>select para elegir motivo/especialidad
+                                <select name="" id="" v-model="especialidadElegidaDeShifts">
+                                    <option value="" disabled selected>Eliga una opcion</option>
+                                    <option value="CARDIOLOGO">Cardiologo</option>
+                                    <option value="CIRUJANO">Cirujano</option>
+                                    <option value="OFTALMOLOGO">Oftalmologo</option>
+                                    <option value="CLINICO">Clinico</option>
+                                </select>
+                            </label>
+                            {{FfffEspecialidad}} <!-- muestra que especialidad elegiste -->
+                
+                            <br>
+                
+                            <label>Select para elegir medico
+                
+                                <select name="" id="" v-if="especialidadElegidaDeShifts == 'CARDIOLOGO'" v-model="medicoElegidoDeShifts">
+                                    <option value="" disabled selected>Eliga una opcion</option>
+                                    <option :value="vete.name" v-for="vete in veterinarioCardiologoDeShifts">{{vete.name}}</option><!--value vete.name -->
+                                </select>
+                
+                                <select name="" id="" v-else-if="especialidadElegidaDeShifts == 'CIRUJANO'" v-model="medicoElegidoDeShifts">
+                                    <option value="" disabled selected>Eliga una opcion</option>
+                                    <option :value="vete.name" v-for="vete in veterinarioCirujanoDeShifts">{{vete.name}}</option><!--value vete.name -->
+                                </select>
+                
+                                <select name="" id="" v-else-if="especialidadElegidaDeShifts == 'OFTALMOLOGO'" v-model="medicoElegidoDeShifts">
+                                    <option value="" disabled selected>Eliga una opcion</option>
+                                    <option :value="vete.name" v-for="vete in veterinarioOftalmologoDeShifts">{{vete.name}}</option><!--value vete.name -->
+                                </select>
+                
+                                <select name="" id="" v-else-if="especialidadElegidaDeShifts == 'CLINICO'" v-model="medicoElegidoDeShifts">
+                                    <option value="" disabled selected>Eliga una opcion</option>
+                                    <option :value="vete.name" v-for="vete in veterinarioClinicoDeShifts">{{vete.name}}</option><!--value vete.name -->
+                                </select>
+                
+                                <select name="" id="" v-else v-model="medicoElegidoDeShifts">
+                                    <option value="" disabled selected>Eliga la especialidad requerida</option>
+                                </select>
+                
+                            </label>
+                            {{FfffMedicoElegido}} <!-- muestra el medico que elegiste segun la especialidad -->
+                
+                            <label>
+                                <select name="" id="" v-model="idMascotaDeShifts">
+                                    <option value="" disabled selected>Eliga una opcion</option>
+                                    <option :value="pet.id" v-for="pet in clienteMascotasDeShifts">{{pet.name}}</option>
+                                </select>
+                            </label>
+                
+                            <br>
+                
+                            <label>Input para elegir el dia
+                                <input type="date" v-model="fechaDeShifts">
+                                <!--<input type="time" v-model="tiempo"> -->
+                                <!-- <input type="submit" @click.prevent="pruebaLocalDateTime"> -->
+                
+                            </label>
+                
+                
+                            <select v-if="fechaDeShifts != null" v-model="tiempoDeShifts">
+                                <option value="" disabled selected>Eliga una opcion</option>
+                                <option :value="vete"  v-for="vete in turnosDeShifts" >{{vete}}</option>
+                            </select><!-- no me toma la propiedad horarios -->
+                            <div v-else>eliga fecha</div>
+                
+                
+                
+                            <label>
+                                <input type="submit" @click.prevent="peticionTurnoMascota">
+                            </label>
+                
+                            {{fffff}}
+                
+                            <!--<input type="submit" value="enviar" @click.prevent="confirmacionTurno"> @click="confirmacionTurnoMascota" -->
+                        </div>
+                        <div v-else-if="tipoTurnoDeShifts == 'cliente'">
+                            <br>
+                            <p v-model="motivoClienteDeShifts">Motivo/Especialidad: Consulta clinica</p>
+                            {{FfffEspecialidadCliente}}
+                
+                
+                            <label>Select para elegir medico de la consulta
+                
+                                <select name="" id="" v-if="motivoClienteDeShifts == 'CLINICO'" v-model="medicoClienteDeShifts">
+                                    <option value="" disabled selected>Eliga una opcion</option>
+                                    <option :value="vete.name" v-for="vete in veterinarioClinicoDeShifts">{{vete.name}}</option>
+                                </select>
+                
+                
+                                <select name="" id="" v-else v-model="medicoClienteDeShifts">
+                                    <option value="" disabled selected>Eliga la especialidad requerida</option>
+                                </select>
+                
+                            </label>
+                            {{FfffMedicoElegidoCliente}}
+                
+                            <br>
+                
+                            <label>Input para elegir el dia
+                                <input type="date" v-model="fechaClienteDeShifts">
+                                <!--<input type="time" v-model="tiempo"> -->
+                                <!-- <input type="submit" @click.prevent="pruebaLocalDateTime"> -->
+                
+                            </label>
+                            {{fffffCliente}}
+                
+                
+                            <select v-if="fechaClienteDeShifts != null" v-model="tiempoClienteDeShifts">
+                                <option value="" disabled selected>Eliga una opcion</option>
+                                <option :value="vete"  v-for="vete in turnosClienteDeShifts" >{{vete}}</option>
+                            </select>
+                            <div v-else>eliga fecha</div>
+                
+                            <label>
+                                <input type="submit" @click.prevent="peticionTurnoCliente">
+                            </label>
+                            
+                            <!-- <input type="submit" @click="peticionTurnoMascota">@click="confirmacionTurnoCliente" -->
+                        </div>
+
+
+                      </form>
+
+
+
+                  </div>
+              </div>
+          </div>
+        </div>
+
+      <!-- modal turno2-->
+  
+      <div id="popup-modal2" tabindex="-1"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full"
+      aria-hidden="true">
+        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+               
+                <button type="button"
+                    class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                    data-modal-toggle="popup-modal2">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+                <div class="p-6">
+                    <form class="formulario-turns">
+
+                      <h2 class="sub-title title-modal-turns">Select para elegir el tipo de turno (para cliente/ para mascota)</h2>
+                        <select name="" id="" v-model="tipoTurnoDeShifts">
+                            <option value="" disabled selected>Eliga una opcion</option>
+                            <option value="cliente">Cliente</option>
+                            <option value="mascota">Mascota</option>
+                        </select>
+                      </label>
+                      {{FfffTipoTurno}} 
+            
+                      <div v-if="tipoTurnoDeShifts == 'mascota'">
+                        <h2 class="sub-title title-modal-turns" style="text-align: left; margin-top: 1vh;">Especialista</h2>
+                              <select name="" id="" v-model="especialidadElegidaDeShifts">
+                                  <option value="" disabled selected>Seleccione un specialista</option>
+                                  <option value="CARDIOLOGO">Cardiologo</option>
+                                  <option value="CIRUJANO">Cirujano</option>
+                                  <option value="OFTALMOLOGO">Oftalmologo</option>
+                                  <option value="CLINICO">Clinico</option>
+                              </select>
+                        
+                          {{FfffEspecialidad}} <!-- muestra que especialidad elegiste -->
+              
+                          <br>
+                          <h2 class="sub-title title-modal-turns" style="text-align: left; margin-top: 1vh;">Medico</h2>
+                          
+                              <select name="" id="" v-if="especialidadElegidaDeShifts == 'CARDIOLOGO'" v-model="medicoElegidoDeShifts">
+                                  <option value="" disabled selected>Seleccione el medico</option>
+                                  <option :value="vete.name" v-for="vete in veterinarioCardiologoDeShifts">{{vete.name}}</option><!--value vete.name -->
+                              </select>
+              
+                              <select name="" id="" v-else-if="especialidadElegidaDeShifts == 'CIRUJANO'" v-model="medicoElegidoDeShifts">
+                                <h2 class="sub-title title-modal-turns" style="text-align: left; margin-top: 1vh;">Mascota</h2>
+                                  <option value="" disabled selected>Eliga una opcion</option>
+                                  <option :value="vete.name" v-for="vete in veterinarioCirujanoDeShifts">{{vete.name}}</option><!--value vete.name -->
+                              </select>
+              
+                              <select name="" id="" v-else-if="especialidadElegidaDeShifts == 'OFTALMOLOGO'" v-model="medicoElegidoDeShifts">
+                                <h2 class="sub-title title-modal-turns" style="text-align: left; margin-top: 1vh;">Mascota</h2>
+                                  <option value="" disabled selected>Eliga una opcion</option>
+                                  <option :value="vete.name" v-for="vete in veterinarioOftalmologoDeShifts">{{vete.name}}</option><!--value vete.name -->
+                              </select>
+              
+                              <select name="" id="" v-else-if="especialidadElegidaDeShifts == 'CLINICO'" v-model="medicoElegidoDeShifts">
+                                <h2 class="sub-title title-modal-turns" style="text-align: left; margin-top: 1vh;">Mascota</h2>
+                                  <option value="" disabled selected>Eliga una opcion</option>
+                                  <option :value="vete.name" v-for="vete in veterinarioClinicoDeShifts">{{vete.name}}</option><!--value vete.name -->
+                              </select>
+              
+                              <select name="" id="" v-else v-model="medicoElegidoDeShifts">
+                                  <option value="" disabled selected>Eliga la especialidad requerida</option>
+                              </select>
+              
+                          </label>
+                          {{FfffMedicoElegido}} <!-- muestra el medico que elegiste segun la especialidad -->
+              
+                          <label>
+                            <h2 class="sub-title title-modal-turns" style="text-align: left; margin-top: 1vh;">Mascota</h2>
+                              <select name="" id="" v-model="idMascotaDeShifts">
+                                <option value="" disabled selected>Seleccione un specialista</option>
+                                  <option :value="pet.id" v-for="pet in clienteMascotasDeShifts">{{pet.name}}</option>
+                              </select>
+                          </label>
+              
+                          <br>
+              
+                          <h2 class="sub-title title-modal-turns" style="text-align: left; margin-top: 1vh;">Seleccione una fecha</h2>
+                              <input type="date" v-model="fechaDeShifts" style="width: 100%;border-radius:10px">
+                              <!--<input type="time" v-model="tiempo"> -->
+                              <!-- <input type="submit" @click.prevent="pruebaLocalDateTime"> -->
+              
+                          </label>
+              
+                          <h2 class="sub-title title-modal-turns" style="text-align: left; margin-top: 1vh;">Seleccione un horario</h2>  
+                          <select v-if="fechaDeShifts != null" v-model="tiempoDeShifts">
+                            <h2 class="sub-title title-modal-turns" style="text-align: left; margin-top: 1vh;">Mascota</h2>
+                              <option value="" disabled selected>Eliga una opcion</option>
+                              <option :value="vete"  v-for="vete in turnosDeShifts" >{{vete}}</option>
+                          </select><!-- no me toma la propiedad horarios -->
+                          <div v-else>eliga fecha</div>
+              
+              
+                          <div style="margin-top: 2vh;">
+                          <label style="padding-top: 10px;">
+                              <input type="submit" @click.prevent="peticionTurnoMascota" value="Solicitar turno" id="solicita-turno-btn">
+                          </label>
+                        </div>
+                          {{fffff}}
+              
+                          <!--<input type="submit" value="enviar" @click.prevent="confirmacionTurno"> @click="confirmacionTurnoMascota" -->
+                      </div>
+                      <div v-else-if="tipoTurnoDeShifts == 'cliente'">
+                          <br>
+                        
+              
+              
+                            <h2 class="sub-title title-modal-turns" style="text-align: left;">Elegir medico de la consulta</h2>
+                              <select name="" id="" v-if="motivoClienteDeShifts == 'CLINICO'" v-model="medicoClienteDeShifts">
+                                <h2 class="sub-title title-modal-turns" style="text-align: left; margin-top: 1vh;">Mascota</h2>
+                                  <option value="" disabled selected>Seleccione un medico</option>
+                                  <option :value="vete.name" v-for="vete in veterinarioClinicoDeShifts">{{vete.name}}</option>
+                              </select>
+              
+              
+                              <select name="" id="" v-else v-model="medicoClienteDeShifts">
+                                  <option value="" disabled selected>Eliga la especialidad requerida</option>
+                              </select>
+              
+                          </label>
+                          {{FfffMedicoElegidoCliente}}
+              
+                          <br>
+              
+                          <h2 class="sub-title title-modal-turns" style="text-align: left; margin-top: 1vh;">Seleccione una fecha</h2>
+                              <input type="date" v-model="fechaClienteDeShifts" style="width: 100%;border-radius:10px">
+                          </label>
+                          {{fffffCliente}}
+              
+              
+                          <h2 class="sub-title title-modal-turns" style="text-align: left;margin-top: 2vh;">Elegir medico de la consulta</h2>
+                          <select v-if="fechaClienteDeShifts != null" v-model="tiempoClienteDeShifts">
+                          
+
+                            
+                              <option value="" disabled selected>Eliga una opcion</option>
+                              <option :value="vete"  v-for="vete in turnosClienteDeShifts" >{{vete}}</option>
+                          </select>
+                          <div v-else>eliga fecha</div>
+              
+                          <div style="margin-top: 2vh;">
+                          <label>
+                              <input type="submit" @click.prevent="peticionTurnoCliente" id="solicita-turno-btn">
+                          </label>
+                        </div>
+                      </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+      <!-- modal modificar cliente -->
+        
+      <div id="popup-modal3" tabindex="-1"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full"
+      aria-hidden="true">
+      <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <h2 class="text-center">Modifica tus datos</h2>
+              <button type="button"
+                  class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                  data-modal-toggle="popup-modal3">
+                  <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+              </button>
+              <div class="p-6">
+                  <form>
+                      <div class="relative z-0 mb-6 w-full group">
+                              <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required=""  v-model="modifyClient.name">
+                              <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre:</label>
+                      </div>
+                      <div class="relative z-0 mb-6 w-full group">
+                          <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" v-model="modifyClient.lastName">
+                          <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Apellido:</label>
+                      </div>
+                      <div class="grid md:grid-cols-2 md:gap-6">
+                          <div class="relative z-0 mb-6 w-full group">
+                              <input type="text" name="floating_provincia" id="floating_provincia"
+                                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                  placeholder=" " required="" v-model="modifyClient.state">
+                              <label for="floating_provincia"
+                                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Provincia:</label>
+                          </div>
+                          <div class="relative z-0 mb-6 w-full group">
+                              <input type="text" name="floating_ciudad" id="floating_ciudad"
+                              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                              placeholder=" " required="" v-model="modifyClient.city">
+                              <label for="floating_ciudad"
+                                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Cuidad:</label>
+                          </div>
+                      </div>
+                      <div class="relative z-0 mb-6 w-full group">
+                          <input type="text" name="floating_direccion" id="floating_direccion"
+                              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                              placeholder=" " required="" v-model="modifyClient.address">
+                          <label for="floating_direccion"
+                              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Direccion:</label>
+                      </div>
+                      <div class="relative z-0 mb-6 w-full group">
+                          <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" v-model="modifyClient.email">
+                          <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email:</label>
+                      </div>
+                      
+                      <div class="grid md:grid-cols-2 md:gap-6">
+                          <div class="relative z-0 mb-6 w-full group">
+                              <input type="number" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" v-model="modifyClient.postalCode">
+                              <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Codigo postal</label>
+                          </div>
+                          <div class="relative z-0 mb-6 w-full group">
+                              <input type="password" name="repeat_password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" v-model="modifyClient.password">
+                              <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Contraseña</label>
+                          </div>
+                      </div>
+                      <button type="submit"
+                          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" @click.prevent="modificarCliente()">Modificar</button>
+                  </form>
+
+
+
+              </div>
+          </div>
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <br><br><br><br>
+  <div class="container-footer-img">
+
+  </div>
+
+  <footer>
+    <div class="container mx-auto container-footer">
+      <div class="div-footer">
+        <ul class="list-footer">
+          <h6 class="h6-footer sub-title">NUESTRA EMPRESA</h6>
+          <a href="" class="paragraph">Quienes somos?</a>
+          <a href="" class="paragraph">Visión</a>
+          <a href="" class="paragraph">Misión</a>
+          <a href=""></a>
+          <a href=""></a>
+        </ul>
+      </div>
+
+      <div class="div-footer">
+        <ul class="list-footer">
+          <h6 class="h6-footer sub-title">PRODUCTOS</h6>
+          <br>
+          <a href="/tienda.html" class="paragraph">Farmacia</a>
+          <a href="/tienda.html" class="paragraph">Alimento</a>
+          <a href="/tienda.html" class="paragraph">Juguetes</a>
+        </ul>
+      </div>
+
+      <div class="div-footer">
+        <ul class="list-footer">
+          <h6 class="h6-footer sub-title">SERVICIOS</h6>
+          <br>
+          <a href="/servicios/clinica-medica.html" class="paragraph">Clínica Médica</a>
+          <a href="/servicios/cirugías.html" class="paragraph">Cirugía</a>
+          <a href="/servicios/cardiologia.html" class="paragraph">Cardiología</a>
+          <a href="/servicios/oftalmología.html" class="paragraph">Oftalmología</a>
+        </ul>
+      </div>
+
+      <div class="div-footer">
+        <ul>
+          <h6 class="h6-footer sub-title">SUSCRIBETE</h6>
+
+          <input type="text" placeholder="Ingresa tu email">
+          <div>
+            <br>
+            <a href="" id="sub-footer">Suscribirse</a>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--JavaScript-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script type="text/javascript">$(window).load(function() {$(".loader").fadeOut("slow");});</script>
+  <script defer src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
+  <script src='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js'></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <!--    <script src="assets/js/scripts.js"></script> -->
+  <script src="dashboard.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Northem | Inicio</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/northem_icon.ico">
+    
+    <!--Tailwind css-->
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+
+    <!--Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+
+    
+</head>
+<body > 
+
+    <header>
+
+        <!--Social-->
+        <section class="info-clinic">
+            <div class="container-contact">
+                <div class="location">
+                    <i class="bi bi-geo-alt"></i>
+                    <p>Zeballos 1232, Rosario Santa Fe</p>
+                </div>
+
+                <div class="mail" style="margin-left: 1.5vh; margin-right: 1.5vh;">
+                    <i class="bi bi-envelope"></i>
+                    <p>northem@contacto.com</p>
+                </div>
+
+                <div class="phone">
+                    <i class="bi bi-telephone-forward"></i>
+                    <p>+54 3412632166</p>
+                </div>
+
+            </div>
+            <div class="container-social">
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+        </section>
+
+        <!--Navbar-->
+        <section id="header" class="">
+        <section class="wrapper transition-banner">
+            
+           <img src="assets/img/logo.png" class="brand" width="165">
+        <div class="container-mobile-items" >
+          <a href="/carrito.html" class="mx-5"><i class="bi bi-cart-check" style="font-size: 3vh;"
+              id="card-shop-mobile"></i></a>
+          <div class="burger" id="burger">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </div>
+        </div>
+           
+           <span class="overlay">
+            
+           </span>
+           
+           <nav class="navbar" id="navbar">
+            
+              <ul class="menu" id="menu">
+                <img src="assets/img/logo.png" class="brand" width="200" style="margin-left: 10px;" id="img-nav-mobile">
+                 <li class="menu-item"><a href="index.html" class="menu-link">Inicio</a></li>
+                 
+                 <li class="menu-item menu-dropdown">
+                    <span class="menu-link " data-toggle="submenu">Especialistas<i class="bx bx-chevron-down"></i></span>
+                    <ul class="submenu">
+                       <li class="submenu-item"><a href="servicios/clinica-medica.html" class="submenu-link">Clínica Médica</a></li>
+                       <li class="submenu-item"><a href="servicios/oftalmología.html" class="submenu-link">Oftalmología</a></li>
+                       <li class="submenu-item"><a href="servicios/cardiologia.html" class="submenu-link">Cardiologia</a></li>
+                       <li class="submenu-item"><a href="servicios/cirugías.html" class="submenu-link">Cirugía</a></li>
+                    </ul>
+                 </li>
+                 <li class="menu-item"><a href="/obra-social.html" class="menu-link">Obra Social</a></li>
+                 <li class="menu-item"><a href="/tienda.html" class="menu-link">Tienda</a></li>
+                 <li class="menu-item"><a href="/contacto.html" class="menu-link">Contacto</a></li>
+
+                 
+                  <li class="menu-item"><a @click="logout()" class="menu-link" id="logout-btn" v-show="clientTrue.length !=0">Cerrar Sesion</a>
+                  </li>
+                  <li class="menu-item"><a @click="dasboard()" class="menu-link" id="dasboard-btn" v-show="clientTrue.length !=0">Dasboard</a>
+                  </li>
+                 <li class="menu-item"><a href="/carrito.html" class="menu-link" id="card-shop-pc"><i class="bi bi-cart-check" style="font-size: 3vh;"></i></a></li>
+              </ul>
+           </nav>
+        </section>
+        </section>
+
+        <!--Banner-->
+        <section id="img-banner">
+        </section>
+        
+    </header>
+
+<div id="app">
+    <main>
+
+        <h1 id="title-admin" class="title">Panel Administrativo</h1>
+        <section class="container-admin-das container mx-auto">
+            <div class="container-vet-admin">
+                <h1 style="margin-top: 2vh;color: var(--secondary);" >Veterinarios <button data-modal-toggle="popup-modal"><i class="bi bi-plus-circle-fill" style="font-size: 2rem;color: rgb(64, 243, 64);"></i></button></h1>
+
+                <div class="table1 ">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Dni</th>
+                          <th>Nombre</th>
+                          <th>Apellido</th>
+                          <th>Especialidad</th>
+                          <th>Numero</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr v-for="veterinary in veterinaries">
+                        <td>{{veterinary.id}}</td>
+                        <td>{{veterinary.name}}</td>
+                        <td>{{veterinary.lastName}}</td>
+                        <td>{{veterinary.veterinaryCategory}}</td>
+                        <td>{{veterinary.phoneNumber}}</td>
+                            <td><button @click="deleteVeterinari(veterinary.id)">Eliminar</button></td>
+                        </tr>
+
+                       
+                       
+
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="container-vet-admin">
+                <div class="container-vet-admin">
+                    <h1 style="margin-top: 5vh;color: var(--secondary);">Listado de productos <button  data-modal-toggle="history-modal"><i class="bi bi-plus-circle-fill" style="font-size: 2rem;color: rgb(64, 243, 64);"></i></button></h1>
+    
+                    <div class="table1 table-vet-admin">
+                        <table>
+                          <thead>
+                            <tr class="table-top-admin">
+                            <th>Nombre</th>
+                            <th>Stock</th>
+                            <th>Precio</th>
+                            <th>Categoria</th>
+                            <th></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr v-for=" product in products">
+                                <td>{{product.name}}</td>
+                                <td>{{product.stock}}</td>
+                                <td>{{product.price}}</td>
+                                <td>{{product.productCategory}}</td>
+                                <td><button @click="deleteProduct(product.id)">Eliminar</button></td>
+                            </tr>
+    
+                           
+                           
+    
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+    
+    </main>
+
+    <div id="history-modal" tabindex="-1"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full"
+    aria-hidden="true">
+    <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <h3 class="text-center title-modal-veterinary">Agregar nuevo producto</h3>
+            <button type="button"
+                class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                data-modal-toggle="history-modal">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+            <div class="p-6">
+              <form>
+                  <div class="relative z-0 mb-6 w-full group">
+                      <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required=""  v-model="nameProduct" >
+                      <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre :</label>
+                  </div>
+
+                  <div class="relative z-0 mb-6 w-full group">
+                      <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" v-model="brand" >
+                      <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Marca:</label>
+                  </div>
+                  <div class="relative z-0 mb-6 w-full group">
+                          <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required=""  v-model="description" >
+                          <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Descripcion:</label>
+                  </div>
+                  <div class="relative z-0 mb-6 w-full group">
+                      <input  type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" v-model="image">
+                      <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">imagen:</label>
+                  </div>
+
+                  <div class="relative z-0 mb-6 w-full group">
+                      <input type="number" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required=""v-model="stock" >
+                      <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Stock:</label>
+                  </div>
+
+                  <div class="relative z-0 mb-6 w-full group">
+                      <input type="number" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required=""  v-model="price">
+                      <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Precio:</label>
+                  </div>
+                  
+                
+                  
+
+                  <div class="relative z-0 mb-6 w-full group">
+                      <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" v-model="productCategory">
+                      <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Categoria:</label>
+                  </div>
+
+                  <button type="submit"
+                      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"  @click.prevent="createProduct()">Subir producto<button>
+              </form>
+
+
+
+          </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="popup-modal" tabindex="-1"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full"
+    aria-hidden="true">
+    <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <h3 class="text-center title-modal-veterinary">Ingrese los datos del nuevo veterinario</h3>
+            <button type="button"
+                class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                data-modal-toggle="popup-modal">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+            <div class="p-6">
+                <form>
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" v-model="name" >
+                        <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre:</label>
+                    </div>
+
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" v-model="lastName" >
+                        <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Segundo Nombre:</label>
+                    </div>
+                    <div class="relative z-0 mb-6 w-full group">
+                            <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required=""  v-model="dni" >
+                            <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">DNI:</label>
+                    </div>
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input onkeyup="mayus(this)" type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" v-model="veterinaryCategory">
+                        <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Especialidad:</label>
+                    </div>
+
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" v-model="list" >
+                        <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Lista de horarios:</label>
+                    </div>
+
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required=""  v-model="direction">
+                        <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Direccion:</label>
+                    </div>
+                    
+                  
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="tel" name="floating_direccion" id="floating_direccion"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required="" v-model="phoneNumber">
+                        <label for="floating_direccion"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Telefono:</label>
+                    </div>
+
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" v-model="email">
+                        <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email:</label>
+                    </div>
+
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="password" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required="" v-model="password" >
+                        <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Contraseña:</label>
+                    </div>
+                
+                   
+                    
+                    
+                    <button type="submit"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"  @click.prevent="createVeterinary()">Registrar veterinario</button>
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+ <!-- Footer -->
+ <div class="container-footer-img">
+</div>
+
+<footer>
+  <div class="container mx-auto container-footer">
+    <div class="div-footer">
+      <ul class="list-footer">
+        <h6 class="h6-footer sub-title">NUESTRA EMPRESA</h6>
+        <br>
+        <a href="" class="paragraph">Quienes somos?</a>
+        <a href="" class="paragraph">Visión</a>
+        <a href="" class="paragraph">Misión</a>
+        <a href=""></a>
+        <a href=""></a>
+      </ul>
+    </div>
+    <div class="div-footer">
+      <ul class="list-footer">
+        <h6 class="h6-footer sub-title">PRODUCTOS</h6>
+        <br>
+        <a href="/tienda.html" class="paragraph">Farmacia</a>
+        <a href="/tienda.html" class="paragraph">Alimento</a>
+        <a href="/tienda.html" class="paragraph">Juguetes</a>
+      </ul>
+    </div>
+    <div class="div-footer">
+      <ul class="list-footer">
+        <h6 class="h6-footer sub-title">SERVICIOS</h6>
+        <br>
+        <a href="/servicios/clinica-medica.html" class="paragraph">Clínica Médica</a>
+        <a href="/servicios/cirugías.html" class="paragraph">Cirugía</a>
+        <a href="/servicios/cardiologia.html" class="paragraph">Cardiología</a>
+        <a href="/servicios/oftalmología.html" class="paragraph">Oftalmología</a>
+      </ul>
+    </div>
+    <div class="div-footer">
+      <ul>
+        <h6 class="h6-footer sub-title">SUSCRIBETE</h6>
+
+        <input type="text" placeholder="Ingresa tu email">
+        <div>
+          <br>
+          <a href="" id="sub-footer">Suscribirse</a>
+        </div>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script defer src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
+<script src='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="ADMIN.js"></script>
+</body>
+</html>
