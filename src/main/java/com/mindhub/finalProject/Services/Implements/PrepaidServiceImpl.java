@@ -2,7 +2,7 @@ package com.mindhub.finalProject.Services.Implements;
 
 import com.mindhub.finalProject.Services.PrepaidService;
 import com.mindhub.finalProject.models.Prepaid;
-import com.mindhub.finalProject.Services.repository.PrepaidRepository;
+import com.mindhub.finalProject.repository.PrepaidRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

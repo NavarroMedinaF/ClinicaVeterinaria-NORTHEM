@@ -2,7 +2,7 @@ package com.mindhub.finalProject.Services.Implements;
 
 import com.mindhub.finalProject.Services.PetService;
 import com.mindhub.finalProject.models.Pet;
-import com.mindhub.finalProject.Services.repository.PetRepository;
+import com.mindhub.finalProject.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

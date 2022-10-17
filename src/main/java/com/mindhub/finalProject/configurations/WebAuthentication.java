@@ -2,7 +2,7 @@ package com.mindhub.finalProject.configurations;
 
 import com.mindhub.finalProject.models.Authority;
 import com.mindhub.finalProject.models.Usuario;
-import com.mindhub.finalProject.Services.repository.UsuarioRepository;
+import com.mindhub.finalProject.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

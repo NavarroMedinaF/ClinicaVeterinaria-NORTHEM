@@ -2,7 +2,7 @@ package com.mindhub.finalProject.Services.Implements;
 
 import com.mindhub.finalProject.Services.CategoryService;
 import com.mindhub.finalProject.models.Category;
-import com.mindhub.finalProject.Services.repository.CategoryRepository;
+import com.mindhub.finalProject.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

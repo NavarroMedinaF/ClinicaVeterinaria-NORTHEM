@@ -2,7 +2,7 @@ package com.mindhub.finalProject.Services.Implements;
 
 import com.mindhub.finalProject.Services.HospitalizationService;
 import com.mindhub.finalProject.models.Hospitalization;
-import com.mindhub.finalProject.Services.repository.HospitalizationRepository;
+import com.mindhub.finalProject.repository.HospitalizationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

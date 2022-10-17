@@ -3,7 +3,7 @@ package com.mindhub.finalProject.Services.Implements;
 
 import com.mindhub.finalProject.Services.CardService;
 import com.mindhub.finalProject.models.Card;
-import com.mindhub.finalProject.Services.repository.CardRepository;
+import com.mindhub.finalProject.repository.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

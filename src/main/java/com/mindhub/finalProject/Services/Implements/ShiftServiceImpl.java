@@ -2,7 +2,7 @@ package com.mindhub.finalProject.Services.Implements;
 
 import com.mindhub.finalProject.Services.ShiftService;
 import com.mindhub.finalProject.models.Shift;
-import com.mindhub.finalProject.Services.repository.ShiftRepository;
+import com.mindhub.finalProject.repository.ShiftRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

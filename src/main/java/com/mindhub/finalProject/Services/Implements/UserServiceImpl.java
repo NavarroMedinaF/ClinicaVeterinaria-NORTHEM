@@ -5,10 +5,10 @@ import com.mindhub.finalProject.models.Admin;
 import com.mindhub.finalProject.models.Client;
 import com.mindhub.finalProject.models.Usuario;
 import com.mindhub.finalProject.models.Veterinary;
-import com.mindhub.finalProject.Services.repository.AdminRepository;
-import com.mindhub.finalProject.Services.repository.ClientRepository;
-import com.mindhub.finalProject.Services.repository.UserRepository;
-import com.mindhub.finalProject.Services.repository.VeterinaryRepository;
+import com.mindhub.finalProject.repository.AdminRepository;
+import com.mindhub.finalProject.repository.ClientRepository;
+import com.mindhub.finalProject.repository.UserRepository;
+import com.mindhub.finalProject.repository.VeterinaryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

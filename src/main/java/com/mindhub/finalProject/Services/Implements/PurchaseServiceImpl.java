@@ -2,7 +2,7 @@ package com.mindhub.finalProject.Services.Implements;
 
 import com.mindhub.finalProject.Services.PurchaseService;
 import com.mindhub.finalProject.models.Purchase;
-import com.mindhub.finalProject.Services.repository.PurchaseRepository;
+import com.mindhub.finalProject.repository.PurchaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

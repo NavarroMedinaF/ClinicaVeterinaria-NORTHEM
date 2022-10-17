@@ -1,4 +1,4 @@
-package com.mindhub.finalProject.Services.repository;
+package com.mindhub.finalProject.repository;
 
 import com.mindhub.finalProject.models.Prepaid;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -2,7 +2,7 @@ package com.mindhub.finalProject.Services.Implements;
 
 import com.mindhub.finalProject.Services.MedicalHistoryService;
 import com.mindhub.finalProject.models.MedicalHistory;
-import com.mindhub.finalProject.Services.repository.MedicalHistoryRepository;
+import com.mindhub.finalProject.repository.MedicalHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
